@@ -5,11 +5,10 @@ int main() {
     int var1 = 1;
     //int var2 = 2;
     //int var3 = 3;
-    switch (var1)
-    {
-    case 1:  // Casp var1 = 1
+    switch (var1)  {
+    case 1:  // Caso var1 = 1
         std::cout << "Caso1!\n";
-        break;
+        break;  // Los break para salir del switch
     case 2:  // Caso var1 = 2
         std::cout << "Caso2!\n";
         break;
@@ -17,6 +16,7 @@ int main() {
         std::cout << "Caso3!\n";
         break;
     default:  // Si ningun caso cumple
+        std::cout << "No cumple ningun caso\n";
         break;
     }
 }
