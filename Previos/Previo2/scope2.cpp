@@ -4,6 +4,6 @@ using namespace std;  // para poder usar el cout
 
 extern int count;  // Se indica el extern
 
-void wrhite_extern(){
+void write_extern(){
     cout << "El contador es " << count;
 }
