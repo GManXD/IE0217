@@ -2,6 +2,7 @@
 using namespace std;
 
 int main(){
+    // Se inicializan las variables
     int var1 = 3;
     int var2 = 24;
     int var3 = 16;
