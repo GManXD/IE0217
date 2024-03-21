@@ -21,7 +21,7 @@ int main(){
     cout << "b = " << b << endl;
 
     // Llamar la funcion para cambiar intercambiar los numeros
-    swap(a,b);
+    swap(&a,&b);  // Se envia el tipo entero puntero (con &)
 
     cout << "\nAfter swapping" << endl;
     cout << "a = " << a << endl;
