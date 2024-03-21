@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-
+// estructura temp
 struct temp{
     int i;
     float f;
@@ -8,6 +8,7 @@ struct temp{
 };
 
 int main(){
+    //se declara puntero tipo temp
     temp *ptr;
     return 0;
 }
