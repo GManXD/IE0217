@@ -14,7 +14,7 @@ class Animal{
         }
 };
 
-class Dog : public Animal{
+class Dog : public Animal{  // Herencia de la Clase Animal
     public:
         void bark(){
             // Imprime que puede ladrar
