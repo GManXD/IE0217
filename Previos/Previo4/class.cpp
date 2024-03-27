@@ -9,7 +9,7 @@ class Molde {
         double largo;
         double ancho;
         double alto;
-
+        // Se asignan los valores de largo, ancho y alto en el constructor
         Molde(double largo_p, double ancho_p, double alto_p): largo(largo_p), ancho(ancho_p), alto(alto_p){  // Constructor de la clase
             // Se ejecuta al instanciar el objeto
             // Imprime un mensaje en pantalla que indica la instanciacion
