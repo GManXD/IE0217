@@ -19,7 +19,7 @@ class Molde {
         }
 
         ~Molde(){  // Destrucctor de la clase
-
+            cout << "Saludos desde el destructor" << endl;
         }
     double calcularArea(){
         // Calcula el area del objeto

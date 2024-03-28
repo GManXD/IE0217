@@ -34,3 +34,8 @@ class PrivateDerived: public Base{
     
     */
 };
+
+int main(){
+
+    return 0;
+}

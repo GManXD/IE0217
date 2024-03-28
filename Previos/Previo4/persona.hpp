@@ -1,3 +1,4 @@
+// Archivo encabezado para main.cpp
 #ifndef PERSONA_H  // Si no está definido lo define
 #define PERSONA_H
 

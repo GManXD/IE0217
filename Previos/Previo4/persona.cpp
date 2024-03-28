@@ -1,3 +1,4 @@
+// Archivo donde se definen los metodos y constructor de clase para el arhivo main.cpp
 #include "persona.hpp"
 using namespace std;
 
