@@ -2,7 +2,37 @@
 
 **1. ¿Cuál es la principal diferencia entre C y C++?**
 
+    La principal diferencia entre C y C++ es la capacidad de C++ para la programación orientada a objetos mientras que C es un lenguaje estructurado.
+
 **2. Explique el propósito y el uso de los siguientes comandos de Git: git init, git add, git commit, git push, git pull, git clone, git branch, git merge.**
+
+`git init`
+
+    Al utilizar este comando en un directorio, Git inicia un repositorio en la ubicación actual y ahora este puede ser versionado.
+
+`git add`
+
+    Con git add se pueden seleccionar los cambios que se desean pasar de un estado "unstaged" a un estado de "staged" para que luego estos sean agregados en un nuevo commit.
+
+`git commit`
+
+    Se utiliza para agregar un nuevo commit con los cambios que se encuentren en estado "staged" en ese momento.
+
+`git push`
+
+    Con este comando los commits que han sido creados de manera local se envían al servidor y son implementados.
+
+`git pull`
+
+    Se utiliza para
+
+`git clone`
+
+    Se utiliza para
+
+`git branch`
+
+    Se utiliza para
 
 **3. ¿Qué es Git y cuál es su propósito en el desarrollo de software?**
 
