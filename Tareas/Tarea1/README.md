@@ -12,7 +12,8 @@
 
 `git add`
 
-    Con git add se pueden seleccionar los cambios que se desean pasar de un estado "unstaged" a un estado de "staged" para que luego estos sean agregados en un nuevo commit.
+    Con git add se pueden seleccionar los cambios que se desean pasar de un estado "unstaged" a un estado de "staged"
+    para que luego estos sean agregados en un nuevo commit.
 
 `git commit`
 
@@ -20,19 +21,23 @@
 
 `git push`
 
-    Con este comando los commits que han sido creados de manera local se envían al servidor y son implementados.
+    Con este comando los commits que han sido creados de manera local se envían al servidor remoto y son implementados.
 
 `git pull`
 
-    Se utiliza para
+    Este comando se utiliza para actualizar el repositorio actual con respecto al servidor remoto.
 
 `git clone`
 
-    Se utiliza para
+    Al utilizar este comando se crea un directorio con una copia local del repositorio remoto y todo su historial de commits.
 
 `git branch`
 
-    Se utiliza para
+    Este comando puede mostrarnos la rama actual y todas las existentes, crear nuevas ramas, renombrar una rama o eliminarla.
+
+`git merge`
+
+    Se utiliza para fusionar los cambios de una rama con la rama actual (de manera local), siempre que no existan conflictos entre estas.
 
 **3. ¿Qué es Git y cuál es su propósito en el desarrollo de software?**
 
