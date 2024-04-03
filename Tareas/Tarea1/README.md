@@ -153,3 +153,5 @@
 **23. ¿Investigue qué es un memory leak?**
 
     Un memory leak ocurre cuando se asigna memoria dinámica, pero esta no se libera cuando ya no se necesita, causando así una fuga de memoria que afecta el rendimiento y la estabilidad del programa.
+
+**Nota: C++ utiliza CamelCase**
