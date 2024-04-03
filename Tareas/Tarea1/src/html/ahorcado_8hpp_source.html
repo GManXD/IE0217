@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ahorcado: Archivo de código fuente ahorcado.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Ahorcado<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Juego interactivo Ahorcado</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ahorcado.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="ahorcado_8hpp.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#ifndef AHORCADO_HPP</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#define AHORCADO_HPP</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="struct_ahorcado.html">   22</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_ahorcado.html">Ahorcado</a> {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="comment">// Almacena los datos que determinan si se gana o pierde, y la palabra a adivinar</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="struct_ahorcado.html#ae8ecd7f1380f842bd78e4b0e997fdbe8">   24</a></span>    <span class="keywordtype">string</span> <a class="code hl_variable" href="struct_ahorcado.html#ae8ecd7f1380f842bd78e4b0e997fdbe8">palabraAdivinar</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="struct_ahorcado.html#afba794eefe0b4241c487fac658634d29">   25</a></span>    <span class="keywordtype">string</span> <a class="code hl_variable" href="struct_ahorcado.html#afba794eefe0b4241c487fac658634d29">estadoActual</a>;    <span class="comment">// letras encontradas y no encontradas</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="struct_ahorcado.html#a76dd973da4c889d5247796152ca6889f">   26</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_ahorcado.html#a76dd973da4c889d5247796152ca6889f">intentosMax</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="struct_ahorcado.html#add070449af9b1770659c873f313aa8e7">   27</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_ahorcado.html#add070449af9b1770659c873f313aa8e7">intentosActual</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>};</div>
+</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keywordtype">void</span> <a class="code hl_function" href="ahorcado_8hpp.html#a2a0e843767aeea4f433a28b9c54f573a">menu</a>();</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="comment">/*</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">    Mostrar menú interactivo: </span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">    1. Elegir la dificultad del juego (n´umero de intentos).</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">    2. Iniciar el juego.</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">    3. Agregar palabras al arreglo de palabras que se escogen aleatoriamente.</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">    4. Ver diccionario de palabras.</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">    5. Salir del programa.</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">    */</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keywordtype">void</span> <a class="code hl_function" href="ahorcado_8hpp.html#a077335d8beefe0be9a3f4aca49bb7789">seleccionDificultad</a>(<a class="code hl_struct" href="struct_ahorcado.html">Ahorcado</a> &amp;partida);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="comment">// Establece el numero maximo de intentos permitidos</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keywordtype">void</span> <a class="code hl_function" href="ahorcado_8hpp.html#ad6ee3101936fc34c2f759972d7d236e2">agregarPalabras</a>(<span class="keywordtype">string</span> diccionario[], <span class="keywordtype">int</span> &amp;tamanoDiccionario);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="comment">// Se modifica el tamaño del diccionario y se agregan las palabras al diccionario</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keywordtype">void</span> <a class="code hl_function" href="ahorcado_8hpp.html#a6bbb5ee5eaa888a353b7200408181e1d">mostrarDiccionario</a>(<span class="keywordtype">string</span> diccionario[], <span class="keywordtype">int</span> tamanoDiccionario);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="comment">// Muestra las palabras que contien el diccionario</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="keywordtype">void</span> <a class="code hl_function" href="ahorcado_8hpp.html#aaebc41782457a36666fecdf8931edeb3">inicializar</a>(<span class="keywordtype">string</span> diccionario[], <span class="keywordtype">int</span> tamanoDiccionario, <a class="code hl_struct" href="struct_ahorcado.html">Ahorcado</a> &amp;partida);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="comment">// Elige una palabra aleatoria del diccionario e inicializa la variable &quot;estadoActual&quot; con giones bajos</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="keywordtype">string</span> <a class="code hl_function" href="ahorcado_8hpp.html#aa661443600848c573f10849e1e6cd062">adivinar</a>(<a class="code hl_struct" href="struct_ahorcado.html">Ahorcado</a> &amp;partida, <span class="keywordtype">int</span> &amp;aciertos);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="comment">// Verifica si la letra adivinada por el usuario pertenece a la palabra</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="comment">// Actualiza el estado de la palabra a adivinar en el caso de que se adivine una letra</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="keywordtype">string</span> <a class="code hl_function" href="ahorcado_8hpp.html#a2d0bbb4584103dac438d7f239132fd67">verificarGane</a>(<a class="code hl_struct" href="struct_ahorcado.html">Ahorcado</a> &amp;partida, <span class="keywordtype">int</span> &amp;aciertos, <span class="keywordtype">bool</span> condicionAumento);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="comment">// Verifica si se ha terminado el juego, es decir, que se adivine la palabra o se alcancen la cantidad maxima de intentos</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="comment">// Actualiza la catidan de intentos</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="preprocessor">#endif </span><span class="comment">// AHORCADO_HPP</span></div>
+<div class="ttc" id="aahorcado_8hpp_html_a077335d8beefe0be9a3f4aca49bb7789"><div class="ttname"><a href="ahorcado_8hpp.html#a077335d8beefe0be9a3f4aca49bb7789">seleccionDificultad</a></div><div class="ttdeci">void seleccionDificultad(Ahorcado &amp;partida)</div><div class="ttdoc">Permite al jugador seleccionar la dificultad del juego.</div><div class="ttdef"><b>Definition</b> ahorcado.cpp:25</div></div>
+<div class="ttc" id="aahorcado_8hpp_html_a2a0e843767aeea4f433a28b9c54f573a"><div class="ttname"><a href="ahorcado_8hpp.html#a2a0e843767aeea4f433a28b9c54f573a">menu</a></div><div class="ttdeci">void menu()</div><div class="ttdoc">Muestra el menú interactivo del juego del Ahorcado. El menú presenta opciones para elegir la dificult...</div><div class="ttdef"><b>Definition</b> ahorcado.cpp:7</div></div>
+<div class="ttc" id="aahorcado_8hpp_html_a2d0bbb4584103dac438d7f239132fd67"><div class="ttname"><a href="ahorcado_8hpp.html#a2d0bbb4584103dac438d7f239132fd67">verificarGane</a></div><div class="ttdeci">string verificarGane(Ahorcado &amp;partida, int &amp;aciertos, bool condicionAumento)</div><div class="ttdoc">Verifica si el juego ha terminado, lleva el conteo del numero de intentos y proporciona una &quot;ultima o...</div><div class="ttdef"><b>Definition</b> ahorcado.cpp:113</div></div>
+<div class="ttc" id="aahorcado_8hpp_html_a6bbb5ee5eaa888a353b7200408181e1d"><div class="ttname"><a href="ahorcado_8hpp.html#a6bbb5ee5eaa888a353b7200408181e1d">mostrarDiccionario</a></div><div class="ttdeci">void mostrarDiccionario(string diccionario[], int tamanoDiccionario)</div><div class="ttdoc">Le muestra al jugador las palabras contenidas en el diccionario.</div><div class="ttdef"><b>Definition</b> ahorcado.cpp:68</div></div>
+<div class="ttc" id="aahorcado_8hpp_html_aa661443600848c573f10849e1e6cd062"><div class="ttname"><a href="ahorcado_8hpp.html#aa661443600848c573f10849e1e6cd062">adivinar</a></div><div class="ttdeci">string adivinar(Ahorcado &amp;partida, int &amp;aciertos)</div><div class="ttdoc">Verifica si la letra adivinada por el usuario pertenece a la palabra a adivinar y muestra cuales han ...</div><div class="ttdef"><b>Definition</b> ahorcado.cpp:90</div></div>
+<div class="ttc" id="aahorcado_8hpp_html_aaebc41782457a36666fecdf8931edeb3"><div class="ttname"><a href="ahorcado_8hpp.html#aaebc41782457a36666fecdf8931edeb3">inicializar</a></div><div class="ttdeci">void inicializar(string diccionario[], int tamanoDiccionario, Ahorcado &amp;partida)</div><div class="ttdoc">Elige de manera aleatoria una palabra del diccionario y inicializa una variable en la cual se observa...</div><div class="ttdef"><b>Definition</b> ahorcado.cpp:75</div></div>
+<div class="ttc" id="aahorcado_8hpp_html_ad6ee3101936fc34c2f759972d7d236e2"><div class="ttname"><a href="ahorcado_8hpp.html#ad6ee3101936fc34c2f759972d7d236e2">agregarPalabras</a></div><div class="ttdeci">void agregarPalabras(string diccionario[], int &amp;tamanoDiccionario)</div><div class="ttdoc">Permite al jugador agregar palabras al diccionario.</div><div class="ttdef"><b>Definition</b> ahorcado.cpp:51</div></div>
+<div class="ttc" id="astruct_ahorcado_html"><div class="ttname"><a href="struct_ahorcado.html">Ahorcado</a></div><div class="ttdoc">Almacena informacion como la palabra que se debe adivinar, las letras adivinadas, recuento de intento...</div><div class="ttdef"><b>Definition</b> ahorcado.hpp:22</div></div>
+<div class="ttc" id="astruct_ahorcado_html_a76dd973da4c889d5247796152ca6889f"><div class="ttname"><a href="struct_ahorcado.html#a76dd973da4c889d5247796152ca6889f">Ahorcado::intentosMax</a></div><div class="ttdeci">int intentosMax</div><div class="ttdef"><b>Definition</b> ahorcado.hpp:26</div></div>
+<div class="ttc" id="astruct_ahorcado_html_add070449af9b1770659c873f313aa8e7"><div class="ttname"><a href="struct_ahorcado.html#add070449af9b1770659c873f313aa8e7">Ahorcado::intentosActual</a></div><div class="ttdeci">int intentosActual</div><div class="ttdef"><b>Definition</b> ahorcado.hpp:27</div></div>
+<div class="ttc" id="astruct_ahorcado_html_ae8ecd7f1380f842bd78e4b0e997fdbe8"><div class="ttname"><a href="struct_ahorcado.html#ae8ecd7f1380f842bd78e4b0e997fdbe8">Ahorcado::palabraAdivinar</a></div><div class="ttdeci">string palabraAdivinar</div><div class="ttdef"><b>Definition</b> ahorcado.hpp:24</div></div>
+<div class="ttc" id="astruct_ahorcado_html_afba794eefe0b4241c487fac658634d29"><div class="ttname"><a href="struct_ahorcado.html#afba794eefe0b4241c487fac658634d29">Ahorcado::estadoActual</a></div><div class="ttdeci">string estadoActual</div><div class="ttdef"><b>Definition</b> ahorcado.hpp:25</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>
