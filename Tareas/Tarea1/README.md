@@ -1,3 +1,19 @@
+# Instrucciones de ejecución
+El archivo "main.cpp" utiliza al archivo "ahorcado.cpp", que este a la vez tiene un archivo encabezado el cual es "ahorcado.hpp". Para compilar el programa se debe ejecutar el siguiente comando en la ubicacion donde se encuentra el directorio "Tareas\Tarea1\": 
+
+```bash
+  g++ -o archivo.exe .\main.cpp ./persona.cpp
+```
+
+Es decir, se deben compilar ambos archivos para que funcione el programa debido a que main.cpp utiliza a ahorcado.cpp
+
+Y para ejecutar el programa se ejecuta de la siguiente manera en la misma ubicacion donde se compiló: 
+```bash
+  ./archivo.exe
+```
+
+**Nota: el archivo "persona.hpp" NO SE DEBE COMPILAR**
+
 # Parte Teórica
 
 **1. ¿Cuál es la principal diferencia entre C y C++?**
