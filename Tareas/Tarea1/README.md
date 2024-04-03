@@ -12,7 +12,7 @@ Y para ejecutar el programa se ejecuta de la siguiente manera en la misma ubicac
   ./archivo.exe
 ```
 
-**Nota: el archivo "persona.hpp" NO SE DEBE COMPILAR**
+**Nota: el archivo "ahorcado.hpp" NO SE DEBE COMPILAR**
 
 # Parte Teórica
 
