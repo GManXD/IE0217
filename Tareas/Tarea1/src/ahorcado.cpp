@@ -26,15 +26,37 @@ void verificarGane(){
     // Actualiza la catidan de intentos
 }
 
-void menu(){
+string menu(){
     /*
     Mostrar menú interactivo: 
-    1. Elegir la dificultad del juego (n´umero de intentos).
+    1. Elegir la dificultad del juego (número de intentos).
     2. Iniciar el juego.
     3. Agregar palabras al arreglo de palabras que se escogen aleatoriamente.
     4. Ver diccionario de palabras.
     5. Salir del programa.
+
     */
+   bool condicion = true;
+   string eleccion;
+   do{
+        cout << "Bienvenido al menú, digite una opcion: " << endl;
+        cout << "1. Elegir la dificultad del juego" << endl;
+        cout << "2. Iniciar el juego." << endl;
+        cout << "3. Agregar palabras al arreglo de palabras que se escogen aleatoriamente." << endl;
+        cout << "4. Ver diccionario de palabras." << endl;
+        cout << "5. Salir del programa." << endl;
+        cin >> eleccion;
 
+        if (eleccion == "5"){
+            condicion = false;
+        }
 
+        if (eleccion == "1" || eleccion == "2" || eleccion == "3" || eleccion == "4" || eleccion == "5"){
+            return eleccion;
+        }
+        else{
+            cout << "Entrada invalida, digite de nuevo" << endl;
+        }
+   }
+    while (condicion);
 }

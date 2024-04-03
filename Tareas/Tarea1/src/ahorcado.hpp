@@ -30,7 +30,7 @@ void verificarGane();
     // Actualiza la catidan de intentos
 
 
-void menu();
+string menu();
     /*
     Mostrar menú interactivo: 
     1. Elegir la dificultad del juego (n´umero de intentos).
@@ -38,6 +38,8 @@ void menu();
     3. Agregar palabras al arreglo de palabras que se escogen aleatoriamente.
     4. Ver diccionario de palabras.
     5. Salir del programa.
+
+    Devuelve un valor tipo string que indica la eleccion del usuario
     */
 
 #endif // AHORCADO_HPP
