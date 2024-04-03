@@ -7,6 +7,7 @@ using namespace std;
 
 
 struct Ahorcado {
+    // Almacena los datos que determinan si se gana o pierde, y la palabra a adivinar
     string palabraAdivinar;
     string estadoActual;    // letras encontradas y no encontradas
     int intentosMax;
@@ -44,7 +45,5 @@ string adivinar(Ahorcado &partida, int &aciertos);
 string verificarGane(Ahorcado &partida, int &aciertos, bool condicionAumento);
     // Verifica si se ha terminado el juego, es decir, que se adivine la palabra o se alcancen la cantidad maxima de intentos
     // Actualiza la catidan de intentos
-
-
 
 #endif // AHORCADO_HPP

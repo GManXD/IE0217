@@ -5,15 +5,15 @@ using namespace std;
 
 
 int main(){
-    Ahorcado partida1;
-    int eleccion;           // Eleccion del menu
-    bool condicion = true;  // Condicion del do-while
-    string diccionario[100];  // Un maximo de 100 palabras
+    Ahorcado partida1;          // estructura Ahorcado
+    int eleccion;               // Eleccion del menu
+    bool condicion = true;      // Condicion del do-while
+    string diccionario[100];    // Un maximo de 100 palabras
     string *ptrDiccionario = diccionario;  // Puntero de la lista diccionario
     int tamanoDiccionario = 0;  // Cantidad de palabras inicialmente en el diccionario
     partida1.intentosMax = 0;  // Valor por defecto para evitar inicializacion sin antes ser cambiado
     string estado = "continue"; // Ganar, perder, continuar
-    int aciertos = 0;  // Aciertos iniciales
+    int aciertos = 0;           // Aciertos iniciales
     partida1.intentosActual = 0;  // 0 intentos iniciales
     do{
         menu();  // Muestra el menú

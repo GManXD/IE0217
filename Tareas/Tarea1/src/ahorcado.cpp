@@ -23,6 +23,7 @@ void menu(){
 }
 
 void seleccionDificultad(Ahorcado &partida){
+    // Selecciona el tipo de dificultad
     int opcion;
     cout << "Seleccione la dificultad: " << endl;
     cout << "1. Facil: 7 intentos permitidos " << endl;
@@ -31,15 +32,15 @@ void seleccionDificultad(Ahorcado &partida){
     cin >> opcion;
     switch (opcion){
         case 1:
-            partida.intentosMax = 7;
+            partida.intentosMax = 7-1;  // Se le resta 1 porque el contador empieza en 0, de esta forma se tendran solamente 7 intentos
             cout << "Dificultad Facil seleccionada " << endl;
             break;
         case 2:
-            partida.intentosMax = 5;
+            partida.intentosMax = 5-1;  // Se le resta 1 porque el contador empieza en 0, de esta forma se tendran solamente 5 intentos
             cout << "Dificultad Intermedia seleccionada " << endl;
             break;
         case 3:
-            partida.intentosMax = 3;
+            partida.intentosMax = 3-1;  // Se le resta 1 porque el contador empieza en 0, de esta forma se tendran solamente 3 intentos
             cout << "Dificultad Dificil seleccionada " << endl;
             break;
         default:
@@ -65,6 +66,7 @@ void agregarPalabras(string diccionario[], int &tamanoDiccionario){
 }
 
 void mostrarDiccionario(string diccionario[],int tamanoDiccionario){
+    // Muestra las palabras que están en el diccionario
     for (int i= 0; i < tamanoDiccionario; ++i){
         cout << "El valor del numero " << i+1 << " del diccionario es : " << diccionario[i] << endl;
     }
@@ -83,10 +85,7 @@ void inicializar(string diccionario[], int tamanoDiccionario, Ahorcado &partida)
     for  (int j = 0; j < (*ptrPalabraAdivinar).length(); ++j){  // Se utilliza el parentesis para agrupar *ptrPalabraAdivinar
         partida.estadoActual += "_";  // Llenar de "_"
     }
-
-
 }
-
 
 string adivinar(Ahorcado &partida, int &aciertos){
     // Verifica si la letra adivinada por el usuario pertenece a la palabra
@@ -123,12 +122,6 @@ string verificarGane(Ahorcado &partida, int &aciertos, bool condicionAumento){
         aciertos = 0;
         partida.intentosActual = 0;
     }
-    else if (*intentosPtr == partida.intentosMax){
-        cout << "Se te acabaron los intentos" << endl;
-        estado = "perder";
-        aciertos = 0;
-        partida.intentosActual = 0;
-    }
     else if (*intentosPtr < partida.intentosMax){
         if (condicionAumento){
         partida.intentosActual++;
@@ -137,6 +130,23 @@ string verificarGane(Ahorcado &partida, int &aciertos, bool condicionAumento){
         cout << partida.estadoActual << endl;
         estado = "continue";
         }
+    else if (*intentosPtr == partida.intentosMax){  // Se le suma 1 debido a que el contador empieza en 0
+        string palabraCompleta;
+        cout << "Se te acabaron los intentos" << endl;
+        cout << "Tienes una ultima oportunidad, debes escribir la palabra completa" << endl;
+        cin >> palabraCompleta;
+        if (palabraCompleta == *palabraPtr){
+            cout << "Wow, acertaste, has ganado" << endl;
+            estado = "ganar";
+        }
+        else{
+            cout << "lo siento, perdiste" << endl;
+            estado = "perder";
+            aciertos = 0;
+            partida.intentosActual = 0;
+        }
+    }
+
     return estado;
 }
 
