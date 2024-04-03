@@ -42,10 +42,20 @@ int seleccionDificultad(Ahorcado &partida){
     }
 }
 
-void agregarPalabras(int tamanoDiccionario, char diccionario[]){
+void agregarPalabras(string diccionario[], int &tamanoDiccionario){
+    // Se modifica el tamaño del diccionario y se agregan las palabras al diccionario
+    cout << "Ingrese la cantidad de palabras que conformarán el diccionario: " << endl;
+    cin >> tamanoDiccionario;
     for (int i; i < tamanoDiccionario; ++i){
         cout << "Ingrese la palabra numero " << i+1 << endl;
         cin >> diccionario[i];
+    }
+    
+}
+
+void mostrarDiccionario(string diccionario[],int tamanoDiccionario){
+    for (int i; i < tamanoDiccionario; ++i){
+        cout << "El valor del numero " << i+1 << " del diccionario es : " << diccionario[i] << endl;
     }
 }
 

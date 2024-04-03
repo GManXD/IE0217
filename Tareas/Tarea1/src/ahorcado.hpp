@@ -27,8 +27,11 @@ string menu();
 
 int seleccionDificultad(Ahorcado &partida);
 
-void agregarPalabras(int tamanoDiccionario, string diccionario[]);
+void agregarPalabras(string diccionario[], int tamanoDiccionario);
     // Agrega palabras las palabras al diccionrio
+
+void mostrarDiccionario(string diccionario[], int tamanoDiccionario);
+    // Muestra las palabras que contien el diccionario
 
 void inicializar();
     // Elige una palabra aleatoria del diccionario e inicializa la variable "estadoActual" con giones bajos

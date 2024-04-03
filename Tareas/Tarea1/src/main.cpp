@@ -9,6 +9,8 @@ int main(){
     Ahorcado partida1;
     int eleccion;
     bool condicion = true;  // Condicion del do-while
+    string diccionario[100];  // Un maximo de 100 palabras
+    int tamanoDiccionario = 0;  // Cantidad de palabras inicialmente en el diccionario
     do{
         menu();  // Muestra el menú
         cin >> eleccion;
@@ -26,11 +28,13 @@ int main(){
             
             case 3:
                 // Agregar palabras al arreglo de palabras que se escogen aleatoriamente.
-                
+                agregarPalabras(diccionario, tamanoDiccionario);
+
+                break;
             
             case 4:
                 // Ver diccionario de palabras.
-                
+                mostrarDiccionario(diccionario, tamanoDiccionario);
                 
                 break;
             
