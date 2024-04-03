@@ -13,7 +13,7 @@ struct Ahorcado {
     int intentosActual;
 };
 
-string menu();
+void menu();
     /*
     Mostrar menú interactivo: 
     1. Elegir la dificultad del juego (n´umero de intentos).
@@ -22,33 +22,28 @@ string menu();
     4. Ver diccionario de palabras.
     5. Salir del programa.
 
-    Devuelve un valor tipo string que indica la eleccion del usuario
     */
 
-int seleccionDificultad(Ahorcado &partida);
+void seleccionDificultad(Ahorcado &partida);
+    // Establece el numero maximo de intentos permitidos
 
-void agregarPalabras(string diccionario[], int tamanoDiccionario);
-    // Agrega palabras las palabras al diccionrio
+void agregarPalabras(string diccionario[], int &tamanoDiccionario);
+    // Se modifica el tamaño del diccionario y se agregan las palabras al diccionario
 
 void mostrarDiccionario(string diccionario[], int tamanoDiccionario);
     // Muestra las palabras que contien el diccionario
 
-void inicializar();
+void inicializar(string diccionario[], int tamanoDiccionario, Ahorcado &partida);
     // Elige una palabra aleatoria del diccionario e inicializa la variable "estadoActual" con giones bajos
-    // Establece el numero maximo de intentos permitidos y el numero actual de intentos realizados
 
-void adivinar();
+
+string adivinar(Ahorcado &partida, int &aciertos);
     // Verifica si la letra adivinada por el usuario pertenece a la palabra
     // Actualiza el estado de la palabra a adivinar en el caso de que se adivine una letra
 
-void verificarGane();
+string verificarGane(Ahorcado &partida, int &aciertos, bool condicionAumento);
     // Verifica si se ha terminado el juego, es decir, que se adivine la palabra o se alcancen la cantidad maxima de intentos
     // Actualiza la catidan de intentos
-
-
-
-
-
 
 
 
