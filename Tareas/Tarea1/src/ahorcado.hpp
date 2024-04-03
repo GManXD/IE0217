@@ -5,7 +5,6 @@
 #include <string>
 using namespace std;
 
-extern string diccionario[];  // Diccionario de palabras
 
 struct Ahorcado {
     string palabraAdivinar;
@@ -13,22 +12,6 @@ struct Ahorcado {
     int intentosMax;
     int intentosActual;
 };
-
-void inicializar();
-    // Elige una palabra aleatoria del diccionario e inicializa la variable "estadoActual" con giones bajos
-    // Establece el numero maximo de intentos permitidos y el numero actual de intentos realizados
-
-
-
-void adivinar();
-    // Verifica si la letra adivinada por el usuario pertenece a la palabra
-    // Actualiza el estado de la palabra a adivinar en el caso de que se adivine una letra
-
-
-void verificarGane();
-    // Verifica si se ha terminado el juego, es decir, que se adivine la palabra o se alcancen la cantidad maxima de intentos
-    // Actualiza la catidan de intentos
-
 
 string menu();
     /*
@@ -41,5 +24,29 @@ string menu();
 
     Devuelve un valor tipo string que indica la eleccion del usuario
     */
+
+int seleccionDificultad(Ahorcado &partida);
+
+void agregarPalabras(int tamanoDiccionario, string diccionario[]);
+    // Agrega palabras las palabras al diccionrio
+
+void inicializar();
+    // Elige una palabra aleatoria del diccionario e inicializa la variable "estadoActual" con giones bajos
+    // Establece el numero maximo de intentos permitidos y el numero actual de intentos realizados
+
+void adivinar();
+    // Verifica si la letra adivinada por el usuario pertenece a la palabra
+    // Actualiza el estado de la palabra a adivinar en el caso de que se adivine una letra
+
+void verificarGane();
+    // Verifica si se ha terminado el juego, es decir, que se adivine la palabra o se alcancen la cantidad maxima de intentos
+    // Actualiza la catidan de intentos
+
+
+
+
+
+
+
 
 #endif // AHORCADO_HPP

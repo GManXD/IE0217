@@ -6,34 +6,44 @@ using namespace std;
 
 
 int main(){
-    string eleccion = menu();
-    int opcion = stoi(eleccion);    // Se realiza la conversion a int para poder utilizar el switch
-    switch (opcion) {
-    case 1:
-        // Elejir dificultad
-        
-        break;
+    Ahorcado partida1;
+    int eleccion;
+    bool condicion = true;  // Condicion del do-while
+    do{
+        menu();  // Muestra el menú
+        cin >> eleccion;
     
-    case 2:
-        // Iniciar juego
-        
-        break;
-    
-    case 3:
-        // Agregar palabras al arreglo de palabras que se escogen aleatoriamente.
-        
-        break;
-    
-    case 4:
-        // Ver diccionario de palabras.
-        
-        break;
-    
-    default:
-        cout << "Saliendo del programa" << endl;  // Caso que opcion = 5 (salir)
-        break;
+        switch (eleccion) {
+            case 1:
+                // Elejir dificultad
+                seleccionDificultad(partida1);
+                break;
+            
+            case 2:
+                // Iniciar juego
+                
+                break;
+            
+            case 3:
+                // Agregar palabras al arreglo de palabras que se escogen aleatoriamente.
+                
+            
+            case 4:
+                // Ver diccionario de palabras.
+                
+                
+                break;
+            
+            case 5:
+                cout << "Saliendo del programa" << endl;  // Caso que opcion = 5 (salir)
+                condicion = false;
+                break;
+            
+            default:
+                cout << "Digite un numero válido" << endl;
+        }
     }
-
+    while(condicion);
 
     return 0;
 }
