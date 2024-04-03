@@ -140,7 +140,7 @@ string verificarGane(Ahorcado &partida, int &aciertos, bool condicionAumento){
             estado = "ganar";
         }
         else{
-            cout << "lo siento, perdiste" << endl;
+            cout << "lo siento, perdiste GAME OVER" << endl;
             estado = "perder";
             aciertos = 0;
             partida.intentosActual = 0;
