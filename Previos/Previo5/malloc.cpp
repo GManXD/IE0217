@@ -12,5 +12,7 @@ int main(){
     // Imprimir valor
     cout << *ptr;
 
+    // Liberar memoria
+    free(ptr);
     return 0;
 }
