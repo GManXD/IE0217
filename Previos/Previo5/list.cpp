@@ -37,7 +37,7 @@ int main(){
     // Imprimir los valores de la lista enlazada
     head = one;
     while(head != NULL){
-        cout << head->value;
+        cout << head->value << endl;
         head = head->next;
     }
     // Liberar memoria

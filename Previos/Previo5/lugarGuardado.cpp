@@ -10,7 +10,7 @@ int main(){
 
     std::cout << "Valor de globalVariable: " << globalVariable << std::endl;
     std::cout << "Valor de stackVariable: " << stackVariable << std::endl;
-    std::cout << "Valor de heapVariable: " << heapVariable << std::endl;
+    std::cout << "Valor de heapVariable: " << *heapVariable << std::endl;
 
     // Liberar la memoria asignada en el heap
     delete heapVariable;

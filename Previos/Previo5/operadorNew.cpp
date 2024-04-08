@@ -7,7 +7,7 @@ int main(){
     // Asignar valor a la variable
     *pointVar = 45;
 
-    std::cout << pointVar;
+    std::cout << *pointVar;
 
     // Liberar espacio de memoria
     delete pointVar;
