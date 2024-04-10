@@ -1,3 +1,20 @@
+# Instrucciones de ejecución
+El archivo "main.cpp" utiliza al archivo "Mundo.cpp", que este a la vez tiene un archivo encabezado el cual es "Mundo.hpp". Para compilar el programa se debe ejecutar el siguiente comando en la ubicacion donde se encuentra el directorio "Tareas\Tarea2\src\": 
+
+```bash
+  g++ -o archivo.exe .\main.cpp .\Mundo.cpp
+```
+
+Es decir, se deben compilar ambos archivos para que funcione el programa debido a que main.cpp utiliza a Mundo.cpp
+
+Y para ejecutar el programa se ejecuta de la siguiente manera en la misma ubicacion donde se compiló: 
+```bash
+  ./archivo.exe
+```
+
+**Nota: el archivo "Mundo.hpp" NO SE DEBE COMPILAR**
+
+
 # Parte Teórica
 
 **1. ¿Qué es la programación orientada a objetos y cuáles son sus principales principios?**
