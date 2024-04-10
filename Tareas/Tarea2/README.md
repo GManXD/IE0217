@@ -150,3 +150,5 @@
   }
 
 ```
+
+**Nota: C++ utiliza el snake_case para nombrar constantes, para el resto se utiliza el CamelCase, para los atributos de una clase se utiliza un prefijo que comúnmente es la inicial del nombre de la clase seguido de un guión bajo y el nombre del atributo en formato CamelCase**
