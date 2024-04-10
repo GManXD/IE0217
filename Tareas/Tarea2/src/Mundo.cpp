@@ -41,10 +41,11 @@ Planeta::Planeta() {
     p_aviones[0] = "America";
     p_aviones[1] = "Asia";
     p_aviones[2] = "Europa";
-    srand(time(NULL));
+    srand(time(NULL));  // Para las funciones que ocupen random
 }
 
 void Planeta::agregarPais() {
+    // Agrega un pais
     int continente;
     string nombre;
     int identificador;
@@ -66,9 +67,11 @@ void Planeta::agregarPais() {
     cin >> p_5G;
     cout << "Ingrese un 1 si el pais tiene centro de investigacion, de otra forma ingrese 0." << endl;
     cin >> centroInvestigacion;
-    if (esPrimo(identificador)) {
+    if (esPrimo(identificador)) { 
+        // Caso que sea primo
         p_continentes[continente - 1].agregarPais(PaisPrimerMundo(nombre, identificador, habitantes, p_5G, centroInvestigacion));
     } else {
+        // Caso no primo
         p_continentes[continente - 1].agregarPais(PaisEnDesarrollo(nombre, identificador, habitantes, p_5G));
     }
     paises[cantidadPaises] = Pais(nombre, identificador, p_5G, habitantes);
@@ -77,6 +80,7 @@ void Planeta::agregarPais() {
 }
 
 void Planeta::compararPaises() {
+    // Compara si los 2 paises son del mismo tipo
     int p1, p2;
     cout << "Los paises que hay son: " << endl;
     for (int i = 0; i < cantidadPaises; ++i) {
@@ -94,6 +98,7 @@ void Planeta::compararPaises() {
 }
 
 void Planeta::eliminarPais() {
+    // Elimina un pais
     int continente;
     int p;
     cout << "Ingrese el numero de continente del cual desea eliminar un pais" << endl;
@@ -112,6 +117,7 @@ void Planeta::eliminarPais() {
 }
 
 Pais::Pais(string nombre, int identificador, bool p_5G, int habitantes) {
+    // Constructor
     this->nombre = nombre;
     this->p_identificador = identificador;
     this->p_habitantes = habitantes;

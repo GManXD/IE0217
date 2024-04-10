@@ -12,7 +12,7 @@ int main() {
 
         switch (eleccion) {
             case 1:
-                ImprimirInformacion(planeta); // Llamada corregida al imprimirInformacion
+                ImprimirInformacion(planeta); // Llamada al imprimirInformacion
                 break;
 
             case 2:  // Comparar paises
