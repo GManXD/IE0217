@@ -1,9 +1,28 @@
+/**
+ * @file Mundo.hpp
+ * @version 1.0
+ * @date 03/04/2024
+ * @author Oscar Rojas Rojas
+ * @title Encabezados
+ * @brief Declaracion de clases y funciones
+*/
+
+
 #ifndef MUNDO_HPP
 #define MUNDO_HPP
 
 #include <string>
 #include <iostream>
 using namespace std;
+/**
+ * @brief Muestra el menú interactivo.
+ * El menú presenta las siguientes opciones :    
+ * 1. Imprimir información de los paises.
+ *  2. Comparar paises.
+ *  3. Agregar un nuevo país
+ *  4. Eliminar un país.
+ *  5. Salir del programa.
+ */
 
 void menu();
     /*
@@ -18,7 +37,9 @@ void menu();
 bool esPrimo(int numero);
 
 
-
+/**
+ * @brief Pesenta las funciones de agregar, comparar y eliminar paises.
+ */
 class Planeta{
     private:
         Pais paises[100];  // Maximo 100 paises
@@ -32,6 +53,13 @@ class Planeta{
         void eliminarPais();   
 };      
 
+/**
+ * @brief Clase base para las demas clases de pais.
+ * @param nombre Nombre del pais
+ * @param identificador Identificador del pais
+ * @param p_5G identifica si posee cobertura 5G
+ * @param habitantes Cantidad de habitantes
+ */
 class Pais{
     public:
         Pais();
@@ -47,6 +75,14 @@ class Pais{
         string tipo;
 };
 
+/**
+ * @brief Clase derivada de la clase pais.
+ * @param nombre Nombre del pais
+ * @param identificador Identificador del pais
+ * @param p_5G identifica si posee cobertura 5G
+ * @param habitantes Cantidad de habitantes
+ * @param centroInvestiacion Identifica si posee centro de investigacion
+ */
 class PaisPrimerMundo: public Pais{
 
     public:
@@ -54,7 +90,13 @@ class PaisPrimerMundo: public Pais{
         bool p_centroInvestigacion;   // Posee uno o no
 };
 
-
+/**
+ * @brief Clase derivada de la clase pais.
+ * @param nombre Nombre del pais
+ * @param identificador Identificador del pais
+ * @param p_5G identifica si posee cobertura 5G
+ * @param habitantes Cantidad de habitantes
+ */
 class PaisEnDesarrollo: public Pais{
     private:
         int cantidadHabitantes;
@@ -63,6 +105,11 @@ class PaisEnDesarrollo: public Pais{
 
 };
 
+/**
+ * @brief Clase continentes que tiene las funciones de agregar o eliminar un pais
+ * @param nombre Nombre del continente
+
+ */
 class Continentes{
     public:
         string c_nombre;       // Cantidad total de paises en el continente
@@ -74,7 +121,10 @@ class Continentes{
         void eliminarPais(int indice);
 };
 
-
+/**
+ * @brief imprime, de manera ordenada, toda la información sobre dicho Planeta
+ * @param p objeto tipo planeta para imprimir su informacion
+ */
 void ImprimirInformacion(Planeta p);
     // imprimir, de manera ordenada, toda la información sobre dicho Planeta
 
