@@ -121,6 +121,8 @@ Pais::Pais(string nombre, int identificador, bool p_5G, int habitantes){
     p_PIB = generarPIB();
 }
 
+Pais::Pais(){}
+
 int Pais::operator==(const Pais &p2){
     if (esPrimo(this->p_identificador) == esPrimo(p2.p_identificador))
         return true;    // Son iguales
@@ -139,6 +141,11 @@ PaisPrimerMundo::PaisPrimerMundo(string nombre, int identificador, int habitante
     this->p_habitantes = habitantes;
     this->p_5G = p_5G;
     this->p_centroInvestigacion = centroInvestigacion;
+    this->tipo = "Primer Mundo";
+}
+
+int Pais::habitantesTrabajadores(){
+    return rand() % p_habitantes;
 }
 
 PaisEnDesarrollo::PaisEnDesarrollo(string nombre, int identificador, int habitantes, bool p_5G){
@@ -146,12 +153,15 @@ PaisEnDesarrollo::PaisEnDesarrollo(string nombre, int identificador, int habitan
     this->p_identificador = identificador;
     this->p_habitantes = habitantes;
     this->p_5G = p_5G;
+    this->tipo = "En Desarrollo";
 }
 
 Continentes::Continentes(string nombre){
     this->c_nombre = nombre;
     this->cantidadPaises = 0;
 }
+
+Continentes::Continentes(){}
 
 void Continentes::agregarPais(const Pais &pais){
     paises[cantidadPaises] = pais;      // El contador de paises empieza en 1
@@ -173,3 +183,63 @@ void Continentes::eliminarPais(int indice){
     cantidadPaises--;
 }
 
+void imprimirInformacion(Planeta p){
+    // Informacion General:
+    cout << "Informacion General: " << endl;
+    cout << "Planeta posee 5 continentes: "; 
+    for (int i = 0; i << 5; ++i){
+        cout << p.p_continentes[i].c_nombre << ", ";
+    }
+    cout << endl;
+    cout << "De estos continentes, el avión pasa por los siguientes: ";
+    for (int i = 0; i < 3; ++i) {
+        cout << p.p_aviones[i];
+    }
+    cout << endl;
+
+    // Informacion sobre los paises: 
+    cout << "\nInformacion sobre los paises: " << endl;
+    for (int i = 0; i < 5; ++i) {   // Iterar cada continente
+        cout << p.p_continentes[i].c_nombre << " posee " << p.p_continentes[i].cantidadPaises << " países, ";
+        int primerMundo = 0, desarrollo = 0;
+        for (int j = 0; j < p.p_continentes[i].cantidadPaises; ++j) {
+            if (esPrimo(p.p_continentes[i].paises[j].p_identificador)) {
+                primerMundo += 1;
+            } else {
+                desarrollo += 1;
+            }
+        }
+        cout << primerMundo << " son de primer mundo y " << desarrollo << " son en desarrollo." << endl;
+    }
+
+    // Informacion sobre los paıses de primer mundo :
+    cout << "Información sobre los países de primer mundo:" << endl;
+    for (int i = 0; i < 5; i ++){
+        for (int j = 0; j < p.p_continentes[i].cantidadPaises; ++j){
+            Pais* pais = &p.p_continentes[i].paises[j];
+            if (pais->tipo == "Primer Mundo"){
+                cout << "Nombre: "  << pais->nombre << endl;
+                cout << "PIB: " << pais->p_PIB << endl;
+                int trabajadores = pais->habitantesTrabajadores();
+                cout << "Habitantes que trabajan: " << trabajadores;
+                cout << "Habitantes que no trabajan: " << pais->p_habitantes - trabajadores;
+                cout << "Poseen 5G: " << pais->p_5G;
+            }
+        }
+    }
+
+    cout << "Información sobre los países en desarrollo:" << endl;
+    for (int i = 0; i < 5; i ++){
+        for (int j = 0; j < p.p_continentes[i].cantidadPaises; ++j){
+            Pais* pais = &p.p_continentes[i].paises[j];
+            if (pais->tipo == "En Desarrollo"){
+                cout << "Nombre: "  << pais->nombre << endl;
+                cout << "PIB: " << pais->p_PIB << endl;
+                int trabajadores = pais->habitantesTrabajadores();
+                cout << "Habitantes : " << pais->p_habitantes;
+                cout << "Poseen 5G: " << pais->p_5G;
+            }
+        }
+    }
+
+}

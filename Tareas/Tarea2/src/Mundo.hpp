@@ -21,11 +21,11 @@ bool esPrimo(int numero);
 
 class Planeta{
     private:
-        Continentes p_continentes[5];  // Lista de objetos continentes
-        string p_aviones[3];  // Lugares por los que pasa
         Pais paises[100];  // Maximo 100 paises
     public:
         Planeta();
+        Continentes p_continentes[5];  // Lista de objetos continentes
+        string p_aviones[3];  // Lugares por los que pasa
         int cantidadPaises;
         void agregarPais();
         void compararPaises();
@@ -33,22 +33,21 @@ class Planeta{
 };      
 
 class Pais{
-    protected:
-        int p_identificador; 
-        bool p_5G;          // Si tiene 5G o no
-        
     public:
         Pais(string nombre, int identificador, bool p_5G, int habitantes);
+        int p_identificador; 
+        bool p_5G;   
+        int habitantesTrabajadores();
         int operator==(const Pais &p2);  // Verifica si son del mismo tipo
         string nombre;
         int p_habitantes;
         int p_PIB;
         int generarPIB();
+        string tipo;
 };
 
 class PaisPrimerMundo: public Pais{
-    private:
-        int habitantesTrabajadores();
+
     public:
         PaisPrimerMundo(string nombre, int identificador, int habitantes, bool p_5G , bool centroInvestigacion);
         bool p_centroInvestigacion;   // Posee uno o no
@@ -77,10 +76,11 @@ class Continentes{
 void ImprimirInformacion(Planeta p);
     // imprimir, de manera ordenada, toda la información sobre dicho Planeta
 
+
 #endif // MUNDO_HPP
 
 
-// , si tienen aeropuerto, el PIB, 
+// , si tienenuo, el PIB, 
 
 // Para los del desarrollo decir la cantidad de habitantes, 
 //para los de primer mundo  decir cuales trabajan y cuales no, si tienen centro de investigacion y desarrollo
