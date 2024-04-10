@@ -18,41 +18,40 @@ void menu();
 bool esPrimo(int numero);
 
 
-void ImprimirInformacion(Planeta p);
-    // imprimir, de manera ordenada, toda la información sobre dicho Planeta
 
 class Planeta{
     private:
         Continentes p_continentes[5];  // Lista de objetos continentes
         string p_aviones[3];  // Lugares por los que pasa
+        Pais paises[100];  // Maximo 100 paises
     public:
         Planeta();
+        int cantidadPaises;
         void agregarPais();
         void compararPaises();
-        void eliminarPais();
-        
+        void eliminarPais();   
 };      
 
 class Pais{
     protected:
-        int p_identificador;
-        int operator==(const Pais &p2);  // Verifica si son del mismo tipo
+        int p_identificador; 
+        bool p_5G;          // Si tiene 5G o no
+        
     public:
         Pais(string nombre, int identificador, bool p_5G, int habitantes);
+        int operator==(const Pais &p2);  // Verifica si son del mismo tipo
         string nombre;
         int p_habitantes;
         int p_PIB;
         int generarPIB();
-        bool p_5G;                          // Si tiene 5G o no
-        
 };
 
 class PaisPrimerMundo: public Pais{
     private:
         int habitantesTrabajadores();
-    protected:
+    public:
+        PaisPrimerMundo(string nombre, int identificador, int habitantes, bool p_5G , bool centroInvestigacion);
         bool p_centroInvestigacion;   // Posee uno o no
-        PaisPrimerMundo(int identificador, int habitantes, bool p_5G , bool centroInvestigacion);
 };
 
 
@@ -60,7 +59,7 @@ class PaisEnDesarrollo: public Pais{
     private:
         int cantidadHabitantes;
     public:
-        PaisEnDesarrollo(int identificador, int habitantes, bool p_5G);
+        PaisEnDesarrollo(string nombre, int identificador, int habitantes, bool p_5G);
 
 };
 
@@ -71,7 +70,12 @@ class Continentes{
         Pais paises[50];       // paises (cantidad max 50 paises)
         Continentes(string nombre);
         void agregarPais(const Pais &pais);
+        void eliminarPais(int indice);
 };
+
+
+void ImprimirInformacion(Planeta p);
+    // imprimir, de manera ordenada, toda la información sobre dicho Planeta
 
 #endif // MUNDO_HPP
 
