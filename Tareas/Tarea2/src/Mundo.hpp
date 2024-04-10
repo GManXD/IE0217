@@ -34,6 +34,7 @@ class Planeta{
 
 class Pais{
     public:
+        Pais();
         Pais(string nombre, int identificador, bool p_5G, int habitantes);
         int p_identificador; 
         bool p_5G;   
@@ -67,6 +68,7 @@ class Continentes{
         string c_nombre;       // Cantidad total de paises en el continente
         int cantidadPaises;
         Pais paises[50];       // paises (cantidad max 50 paises)
+        Continentes();
         Continentes(string nombre);
         void agregarPais(const Pais &pais);
         void eliminarPais(int indice);
