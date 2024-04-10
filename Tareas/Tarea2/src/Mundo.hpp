@@ -15,50 +15,62 @@ void menu();
     5. Salir del programa.
     */
 
+bool esPrimo(int numero);
+
 
 void ImprimirInformacion(Planeta p);
     // imprimir, de manera ordenada, toda la información sobre dicho Planeta
 
 class Planeta{
+    private:
+        Continentes p_continentes[5];  // Lista de objetos continentes
+        string p_aviones[3];  // Lugares por los que pasa
     public:
-        int p_cantidadContinentes;  // Cantidad de continentes
         Planeta();
+        void agregarPais();
+        void compararPaises();
+        void eliminarPais();
         
 };      
 
 class Pais{
     protected:
         int p_identificador;
-        Pais operator==(const Pais &p2);  // Verifica si son del mismo tipo
+        int operator==(const Pais &p2);  // Verifica si son del mismo tipo
     public:
-        Pais(string nombre, int identificador);
+        Pais(string nombre, int identificador, bool p_5G, int habitantes);
         string nombre;
         int p_habitantes;
         int p_PIB;
-        int PIB();
+        int generarPIB();
         bool p_5G;                          // Si tiene 5G o no
         
 };
 
 class PaisPrimerMundo: public Pais{
     private:
-        int HabitantesTrabajadores(); 
+        int habitantesTrabajadores();
     protected:
         bool p_centroInvestigacion;   // Posee uno o no
+        PaisPrimerMundo(int identificador, int habitantes, bool p_5G , bool centroInvestigacion);
 };
 
 
 class PaisEnDesarrollo: public Pais{
     private:
-        int cantidadHabitantes();
+        int cantidadHabitantes;
+    public:
+        PaisEnDesarrollo(int identificador, int habitantes, bool p_5G);
+
 };
 
 class Continentes{
     public:
-        int c_cantidadPaises;       // Cantidad total de paises en el continente
-        int c_paisesPrimerMundo;
-        int c_paisesDesarrollo;
-        bool c_aeropuerto;      // Si tienen o no aeropuerto
+        string c_nombre;       // Cantidad total de paises en el continente
+        int cantidadPaises;
+        Pais paises[50];       // paises (cantidad max 50 paises)
+        Continentes(string nombre);
+        void agregarPais(const Pais &pais);
 };
 
 #endif // MUNDO_HPP

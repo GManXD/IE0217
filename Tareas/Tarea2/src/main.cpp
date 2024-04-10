@@ -4,7 +4,7 @@ using namespace std;
 int main(){
     int eleccion;               // Eleccion del menu
     bool condicion = true;      // Condicion del do-while
-
+    Planeta planeta;
 
     do{
         menu();  // Muestra el menú
@@ -12,20 +12,21 @@ int main(){
     
         switch (eleccion) {
             case 1:
-        
+                ImprimirInformacion(planeta);
                 break;
             
-            case 2:
-
-                break;
-            
-            case 3:
-
-
-                break;
-            
-            case 4:
+            case 2:  // Comparar paises
                 
+                planeta.compararPaises();
+                break;
+            
+            case 3: // Agregar pais
+
+                planeta.agregarPais();
+                break;
+            
+            case 4:  // Eliminar pais
+                planeta.eliminarPais();
                 break;
             
             case 5:
