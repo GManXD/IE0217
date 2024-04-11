@@ -12,8 +12,16 @@ struct Libro{
 
 };
 
+enum opciones{
+    AGREGAR_LIBRO = 1,
+    MOSTRAR_LIBROS = 2,
+    SALIR = 3,
+    OPCIONES_MAX
+};
+
 void agregarLibro(Libro*& lista){
     // Pregunta la informacion de un libro y lo agrega
+    // Se asigna memoria dinamica
     Libro* nuevoLibro = new Libro;
 
     cout << "Ingrese el titulo del libro: " << endl;
@@ -66,13 +74,13 @@ int main(){
         cin >> opcion;
 
         switch (opcion){
-            case 1:
+            case AGREGAR_LIBRO:
                 agregarLibro(listaLibros);
                 break;
-            case 2:
+            case MOSTRAR_LIBROS:
                 mostrarLibros(listaLibros);
                 break;
-            case 3:
+            case SALIR:
                 cout << "Saliendo del programa..." << endl;
                 break;
             default:
