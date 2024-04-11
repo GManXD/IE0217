@@ -1,11 +1,11 @@
 # Instrucciones de ejecución
-El archivo "main.cpp" utiliza los archivos "Empleado.cpp", "EmpleadoAsalariado.cpp" y "EmpleadoPorHoras.cpp" que ests a la vez tienen un archivo encabezado con la extension ".hpp". Para compilar el programa se debe ejecutar el siguiente comando en la ubicacion donde se encuentra el directorio "Laboratorios\Laboratorio2": 
+El archivo "principal.cpp" utiliza el archivo "libro.cpp" que este a su vez tiene un archivo encabezado con la extension ".hpp", es decir "libro.hpp". Para compilar el programa se debe ejecutar el siguiente comando en la ubicacion donde se encuentra el directorio "Laboratorios\Laboratorio3": 
 
 ```bash
-  g++ -o archivo.exe .\main.cpp .\Empleado.cpp .\EmpleadoAsalariado.cpp .\EmpleadoPorHoras.cpp
+  g++ -o archivo.exe .\principal.cpp .\libro.cpp
 ```
 
-Es decir, se deben compilar los archivos .cpp para que funcione el programa debido a que main.cpp utiliza a estos otros archivos.
+Es decir, se deben compilar el archivo .cpp para que funcione el programa debido a que principal.cpp utiliza a este otros archivo.
 
 Y para ejecutar el programa se ejecuta de la siguiente manera en la misma ubicacion donde se compiló: 
 ```bash
