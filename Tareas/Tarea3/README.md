@@ -27,7 +27,7 @@
 
 **7. Explique qué es un árbol binario y cuáles son sus principales características.**
 
-    Un árbol binario es una estructura de datos que se organiza de forma jerarquica que consite en un punto de partida "arriba" llamado nodo raiz, seguido de otros nodos que le suceden a este, los cuales pueden tener otros nodo "abajo" de ellos. Este arbol puede ser recorrido de diferentes formas para acceder a todos los nodos, como el recorrido en orden, pre-orden o post-orden. La estructura jerarquica de los árboles binarios permite la organizacion y busqueda de datos de una forma más eficiente.
+    Un árbol binario es una estructura de datos que se organiza de forma jerarquica que consite en un punto de partida "arriba" llamado nodo raiz, el cual puede tener maximo otros dos nodos que le suceden a este, los cuales pueden tener máximo otros dos nodos "abajo" de ellos y así sucesivamente. Este arbol puede ser recorrido de diferentes formas para acceder a todos los nodos, como el recorrido en orden, pre-orden o post-orden. La estructura jerarquica de los árboles binarios permite la organizacion y busqueda de datos de una forma más eficiente.
 
 **8. ¿Qué es una cola (queue) y en qué situaciones se utiliza comúnmente?**
 
@@ -59,28 +59,41 @@
 
 **15. Describe cómo funciona una lista enlazada y cuáles son sus ventajas y desventajas.**
 
-
+    Una lista enlazada es una estructura de datos que consiste en una secuencia de nodos, estos nodos contienen el valor del dato que almacenan y la dirección del siguiente nodo. La lista enlazada tiene como ventaja que presentan un caracter dinámico, por lo que el tamaño de la lista enlazada puede aumentar o disminuir durante tiempo de ejecución, además, se caracteriza por su eficiente inserción y eliminación de elementos y por esto un eficiente uso de memoria, sin ebargo, para acceder a un elemento en especifico se debe de recorrer la lista desde el inicio, además de que necesita de almacenar el puntero al siguiente nodo.
 
 **16. ¿Qué es un nodo en una lista enlazada y qué contiene?**
 
-
+    Un nodo en una lista enlazada es una estructura que contiene el valor de un elemento y un puntero que apunta hacia el siguiente nodo.
 
 **17. ¿Cuál es la diferencia entre una lista enlazada simple y una lista enlazada doblemente enlazada?**
 
-
+    La lista enlazada simple se diferencia de una lista enlazada doblemente enlazada debido a que en la simple, cada nodo contiene un único enlace que apunta hacia el siguiente nodo, mientras que en la lista enlazada doblemente enlazada cada nodo contiene dos enlaces, de los cuales uno apunta hacia el siguiente nodo y el otro apunta hacia el anterior.
 
 **18. ¿Cómo se realiza la eliminación (delete) de un nodo en una lista enlazada?**
 
-
+    Para eliminar un nodo en una lista enlazada se debe ubicar el nodo anterior a este, el puntero de este nodo anterior ahora debe apuntar al nodo que le sigue al que se desea eliminar, de forma que se "salta" el nodo a eliminar. Finalmente se libera la memoria ocupada por el nodo que se desea eliminar.
 
 **19. Explica cómo funciona el algoritmo de recorrido (traversal) en un árbol binario.**
 
+El algoritmo de recorrido traversal en un árbol binario se puede realizar de tres formas distintas:
 
+`orden`
+
+    Consiste en recorrer el árbol binario pasando primero por todos los nodos de la izquierda, luego el nodo raíz y luego los nodos del lado derecho.
+
+`pre-orden`
+
+    De esta forma se recorre el árbol binario primero por el nodo raíz, luego todos los nodos de la izquierda y finalmente los nodos de la derecha.
+
+`post-orden`
+
+    Se recorre el árbol binario pasando primero por todos los nodos del lado izquierdo, luego todos los del lado derecho y finalmente el nodo raíz.
 
 **20. ¿Cuál es la complejidad temporal del recorrido en preorden, en orden y en postorden en un árbol binario balanceado?**
 
+    Debido a que en un árbol binario, cada nodo se recorre una única vez sin importar el tipo de recorrido, cada uno de estos posee una complejidad de O(n) en un árbol balanceado. 
 
+**21. Explique la diferencia entre la notación Big O (O) y la notación Omega (Ω) en el análisis de la complejidad temporal de los algoritmos. Proporciona un ejemplo de un algoritmo y determina su complejidad temporal utilizando ambas notaciones Big O y Omega.**
 
-**21. Explique la diferencia entre la notación Big O (O) y la notación Omega () en el análisis de la complejidad temporal de los algoritmos. Proporciona un ejemplo de un algoritmo y determina su complejidad temporal utilizando ambas notaciones Big O y Omega.**
-
-
+    La notación Big O describe la complejidad de un algoritmo en el peor de los casos, de forma que el algoritmo no crecerá más que la función que se denota dentro de la Big O, mientras que la notación omega describe el mejor de los casos, es decir, que el algoritmo crecerá más rapido que la funcion que se denota dentro de Omega().
+    Por ejemplo, sea el algoritmo de hash table, de forma que en el peor de los casos se tendra que la tabla hash utiliza encadenamiento para la resolucion de colisiones, por lo que se tendría una complejidad temporal de O(n), mientras que en el mejor de los casos se distribuye uniformemente los elementos, por lo que se tendría una complejidad temporal de Ω(1)
