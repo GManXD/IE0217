@@ -1,8 +1,4 @@
-#include <iostream>
-#include <string>
-#include <ctime>
-#include <chrono>
-#include <cstdlib>
+#include "sortAlgorithm.hpp"
 using namespace std;
 using namespace std::chrono;
 
