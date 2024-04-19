@@ -90,7 +90,7 @@ class HashTable{
                 if(celdaPtr->nombre == nombre){
                     anterior->next = celdaPtr->next;  // Enlazar el nodo anterior al nodo siguiente al nodo actual
                     delete celdaPtr;  // Liberar la memoria del nodo actual
-                    cout << "Contacto eliminado: " << nombre << endl;
+                    cout << "Contacto eliminado de cloud: " << nombre << endl;
                     return;  // Salir de la función después de eliminar el contacto
                 }
                 // Seguir iterando si no se encuentra coincidencia del nombre
@@ -125,9 +125,50 @@ class HashTable{
         }
 };
 
+class Contactos{
+    private:
+        Node* header;
+    
+    public:
+        Contactos() : header(nullptr) {}  // Constructor que inicializa header en nullptr
+    
+        void insertarContacto(string nombre, int telefono){
+            Node* contactoActual = header;
+            while (contactoActual != nullptr){
+                if (contactoActual->nombre == nombre){  // Caso nombre ya existia
+                    cout << "El contacto ya existe " << endl;
+                    return;  // Salir
+                }
+                contactoActual = contactoActual->next;
+            }
+
+
+            Node* nuevoContacto = new Node(nombre, telefono);
+            nuevoContacto->next = header;
+            header = nuevoContacto;
+        }
+};
+
+void agregarContacto(Contactos& contactos, HashTable& tableHash){  // Pasar parametros por referencia
+    // Agrega un contacto en la memoria del celular y el cloud
+    string nombre;
+    int telefono;
+
+    cout << "Indique el nombre del contacto que desea agregar" << endl;
+    cin.ignore();   // Vaciar buffer
+    getline(cin, nombre);
+
+    cout << "Indique el numero de telefono del contacto que desea agregar" << endl;
+    cin >> telefono;
+    
+    contactos.insertarContacto(nombre, telefono);
+    tableHash.insertarContacto(nombre,telefono);
+}
 
 int main(){
-    HashTable tablaHash = HashTable(10);   // Se debe especificar el tamaño de la tabla
+    int tamano = 10;
+    Contactos contactos;    // Lista enlazada para la memoria del celular
+    HashTable tablaHash = HashTable(tamano);   // Hash table para la memoria cloud
     int opcion;
     do{
         cout << "Seleccione su opcion" << endl;
