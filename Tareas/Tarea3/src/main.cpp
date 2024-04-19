@@ -100,6 +100,19 @@ class HashTable{
 
         }
 
+        void mostrar(){
+            // Imprimir Hash-Table y Listas Enlazadas
+            for (int i = 0; i < tamano; ++i) {
+                cout << "Posicion: " << i << " de la tabla hash" << endl;
+                Node* actual = tabla[i];
+                while (actual != nullptr) {
+                    cout << "Nombre: " << actual->nombre << ", Teléfono: " << actual->telefono << endl;
+                    actual = actual->next;
+                }
+                cout << endl;
+            }
+        }
+
         ~HashTable() {  // Destructor que se encarga de liberar memoria
             for (int i = 0; i < tamano; ++i) {
                 Node* posicionActual = tabla[i];
@@ -135,6 +148,7 @@ int main(){
                 break;
             case IMPRIMIR_CLOUD:
                 // Funcion de imprimir hash table y listas enlazadas
+                tablaHash.mostrar();
                 break;
             case MOSTRAR_CONTACTOS:
                 // Funcion de mostrar contactos
