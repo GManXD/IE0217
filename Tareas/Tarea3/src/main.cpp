@@ -147,6 +147,51 @@ class Contactos{
             nuevoContacto->next = header;
             header = nuevoContacto;
         }
+
+        void sort(){
+            // Ordenar de forma alfabetica
+            bool intercambiado;
+            Node* contactoActual;
+            Node* siguiente = nullptr;
+
+            if (header == nullptr || header->next == nullptr){
+                return; // Ya se encuentra ordenado pues tiene 0 o 1 elemento
+            }
+            do {
+                intercambiado = false;
+                contactoActual = header;
+
+                while (contactoActual->next != siguiente) {
+                    if (contactoActual->nombre > contactoActual->next->nombre) {
+                        // Intercambiar los nodos si están en el orden incorrecto
+                        string tempNombre = contactoActual->nombre;
+                        int tempTelefono = contactoActual->telefono;
+                        contactoActual->nombre = contactoActual->next->nombre;
+                        contactoActual->telefono = contactoActual->next->telefono;
+                        contactoActual->next->nombre = tempNombre;
+                        contactoActual->next->telefono = tempTelefono;
+                        intercambiado = true;
+                    }
+                    contactoActual = contactoActual->next;
+                }
+                siguiente = contactoActual;
+            } while (intercambiado);
+        }
+
+        void mostrar() {
+            // Verificar si la lista está vacía
+            if (header == nullptr) {
+                cout << "La lista de contactos esta vacia." << endl;
+                return;
+            }
+            sort(); // Ordenar la lista
+            // Recorrer la lista e imprimir cada contacto
+            Node* actual = header;
+            while (actual != nullptr) {
+                cout << "Nombre: " << actual->nombre << ", Telefono: " << actual->telefono << endl;
+                actual = actual->next;
+            }
+        }
 };
 
 void agregarContacto(Contactos& contactos, HashTable& tableHash){  // Pasar parametros por referencia
@@ -181,8 +226,8 @@ int main(){
         // Casos del menu
         switch (opcion){
             case AGREGAR_CONTACTO:
-                
                 // Funcion de agregar contacto
+                agregarContacto(contactos, tablaHash);
                 break;
             case ELIMINAR_CONTACTO:
                 // Funcion de eliminar contacto
@@ -193,6 +238,7 @@ int main(){
                 break;
             case MOSTRAR_CONTACTOS:
                 // Funcion de mostrar contactos
+                contactos.mostrar();
                 break;
             case SALIR:
                 cout << "Saliendo del programa..." << endl;
