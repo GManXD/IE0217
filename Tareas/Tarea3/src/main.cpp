@@ -192,6 +192,14 @@ class Contactos{
                 actual = actual->next;
             }
         }
+
+        ~Contactos(){   // Destructor que libera la memoria
+            while (header != nullptr) {
+            Node* temp = header;
+            header = header->next;
+            delete temp;
+            }
+        }
 };
 
 void agregarContacto(Contactos& contactos, HashTable& tableHash){  // Pasar parametros por referencia
