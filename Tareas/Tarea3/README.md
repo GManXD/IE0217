@@ -1,3 +1,19 @@
+# Instrucciones de ejecución
+El archivo "main.cpp" utiliza al archivo "gestor.cpp", que este a la vez tiene un archivo encabezado el cual es "gestor.hpp". Para compilar el programa se debe ejecutar el siguiente comando en la ubicacion donde se encuentra el directorio "Tareas\Tarea3\src\": 
+
+```bash
+  g++ -o archivo.exe .\main.cpp .\gestor.cpp
+```
+
+Es decir, se deben compilar ambos archivos para que funcione el programa debido a que main.cpp utiliza a gestor.cpp
+
+Y para ejecutar el programa se ejecuta de la siguiente manera en la misma ubicacion donde se compiló: 
+```bash
+  ./archivo.exe
+```
+
+**Nota: el archivo "gestor.hpp" NO SE DEBE COMPILAR**
+
 # Parte Teórica
 
 **1. ¿Qué es un algoritmo y cuáles son sus características principales?**
@@ -97,3 +113,5 @@ El algoritmo de recorrido traversal en un árbol binario se puede realizar de tr
 
     La notación Big O describe la complejidad de un algoritmo en el peor de los casos, de forma que el algoritmo no crecerá más que la función que se denota dentro de la Big O, mientras que la notación omega describe el mejor de los casos, es decir, que el algoritmo crecerá más rapido que la funcion que se denota dentro de Omega().
     Por ejemplo, sea el algoritmo de hash table, de forma que en el peor de los casos se tendra que la tabla hash utiliza encadenamiento para la resolucion de colisiones, por lo que se tendría una complejidad temporal de O(n), mientras que en el mejor de los casos se distribuye uniformemente los elementos, por lo que se tendría una complejidad temporal de Ω(1)
+
+**Nota: C++ utiliza el snake_case para nombrar constantes, mientras que para el resto se utiliza el CamelCase. Para los atributos de una clase se utiliza un prefijo que comúnmente es la inicial del nombre de la clase seguido de un guión bajo y el nombre del atributo en formato CamelCase**
