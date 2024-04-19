@@ -1,22 +1,7 @@
-#include <iostream>
-#include <string>
-#include <bits/stdc++.h>
-#include <cstring>
-#include <list>
-#include <utility>
+#include "gestor.hpp"
 
 using namespace std;
 
-
-enum opciones{
-    // Opciones disponibles para el menu
-    AGREGAR_CONTACTO = 1,
-    ELIMINAR_CONTACTO,
-    IMPRIMIR_CLOUD,
-    MOSTRAR_CONTACTOS,
-    SALIR,
-    OPCIONES_MAX
-};
 
 class Node{
     // Nodos para la lista enlazada
@@ -74,6 +59,7 @@ class HashTable{
         }
 
         void EliminarContacto(string nombre){
+            // Elimina un contacto de la nube
             int indice = Hashing(nombre);
             Node* celdaPtr= tabla[indice];  // Nodo puntero que apunta al primer nodo de la lista
 
@@ -133,6 +119,7 @@ class Contactos{
         Contactos() : header(nullptr) {}  // Constructor que inicializa header en nullptr
     
         void insertarContacto(string nombre, int telefono){
+            // Agrega un contacto en la memoria del celular
             Node* contactoActual = header;
             while (contactoActual != nullptr){
                 if (contactoActual->nombre == nombre){  // Caso nombre ya existia
@@ -212,6 +199,8 @@ class Contactos{
         }
 
         void mostrar() {
+            // Muestra los contactos de la memoria del celular
+
             // Verificar si la lista está vacía
             if (header == nullptr) {
                 cout << "La lista de contactos esta vacia." << endl;
@@ -260,7 +249,7 @@ void EliminarContacto(Contactos &contactos, HashTable &tablaHash){
     getline(cin, nombre);
     int seElimino = contactos.eliminarContacto(nombre);
     if (seElimino){
-        cout << "Desea eliminar el contacto del cloud tambien?, digite 1 para si o 0 para no: " << endl;
+        cout << "Desea eliminar el contacto del cloud tambien?, digite 1 o cualquier otro numero para no: " << endl;
         cin >> desicion;
 
         if (desicion == 1){
