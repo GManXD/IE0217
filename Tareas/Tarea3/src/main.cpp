@@ -106,7 +106,7 @@ class HashTable{
                 cout << "Posicion: " << i << " de la tabla hash" << endl;
                 Node* actual = tabla[i];
                 while (actual != nullptr) {
-                    cout << "Nombre: " << actual->nombre << ", Teléfono: " << actual->telefono << endl;
+                    cout << "Nombre: " << actual->nombre << ", Telefono: " << actual->telefono << endl;
                     actual = actual->next;
                 }
                 cout << endl;
@@ -146,6 +146,39 @@ class Contactos{
             Node* nuevoContacto = new Node(nombre, telefono);
             nuevoContacto->next = header;
             header = nuevoContacto;
+        }
+        
+        void eliminarContacto(string nombre){
+            // Elimina un contacto de la lista
+
+            // Verificar si la lista está vacía
+            if (header == nullptr) {
+                cout << "La lista de contactos está vacía." << endl;
+                return;
+            }
+            Node* temp = header;
+            Node* prev = nullptr;
+
+            if(temp != nullptr && temp->nombre == nombre){ // Caso de que el contacto a eliminar sea el primer nodo
+                header = temp->next;
+                delete temp;
+                cout << "Se ha eliminado " << nombre << endl;
+                return;
+            }
+
+            while(temp != nullptr && temp->nombre != nombre){
+                prev = temp;
+                temp = temp->next;
+            }
+            
+            if (temp == nullptr){  // Caso de que no se encontro el contacto
+                cout << "El contacto no se encuentra registrado " << endl;
+                return;
+            }
+
+            prev->next = temp->next;
+            delete temp;
+            cout << "Se ha eliminado " << nombre << endl;
         }
 
         void sort(){
@@ -218,6 +251,22 @@ void agregarContacto(Contactos& contactos, HashTable& tableHash){  // Pasar para
     tableHash.insertarContacto(nombre,telefono);
 }
 
+void EliminarContacto(Contactos &contactos, HashTable &tablaHash){
+    // Elimina un contacto de la memoria del celular y pregunta si del cloud tambien
+    string nombre;
+    int desicion;
+    cout << "Indique el nombre del contacto a eliminar" << endl;
+    cin.ignore(); // Vaciar buffer
+    getline(cin, nombre);
+    contactos.eliminarContacto(nombre);
+    cout << "Desea eliminar el contacto del cloud tambien?, digite 1 para sí o 0 para no: " << endl;
+    cin >> desicion;
+
+    if (desicion == 1){
+        tablaHash.EliminarContacto(nombre);
+    }
+}
+
 int main(){
     int tamano = 10;
     Contactos contactos;    // Lista enlazada para la memoria del celular
@@ -239,6 +288,7 @@ int main(){
                 break;
             case ELIMINAR_CONTACTO:
                 // Funcion de eliminar contacto
+                EliminarContacto(contactos, tablaHash);
                 break;
             case IMPRIMIR_CLOUD:
                 // Funcion de imprimir hash table y listas enlazadas
