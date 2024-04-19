@@ -32,9 +32,11 @@ class Node{
 };
 
 class HashTable{
+    // Estructura que almacena una lista enlazada por cada contacto, de forma que la llave corresponde al nombre del contacto
+    // Cada valor corresponde a una lista enlazada que contiene una copia de los contactos correspondientes
     private:
-        int tamano;
-        vector<Node*> tabla;
+        int tamano;     // Tamaño del hashTable
+        vector<Node*> tabla;       // Vector que contiene punteros a nodos, este corresponde a los values de la Hash table
     
     public:
         // Constructor de la clase, inicializa la tabla con nullptr
