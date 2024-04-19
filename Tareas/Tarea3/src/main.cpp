@@ -73,7 +73,43 @@ class HashTable{
             }
         }
 
+        void EliminarContacto(string nombre){
+            int indice = Hashing(nombre);
+            Node* celdaPtr= tabla[indice];  // Nodo puntero que apunta al primer nodo de la lista
 
+            if (celdaPtr != nullptr and celdaPtr->nombre == nombre){  // Caso que el primer nodo sea el nodo a eliminar
+                tabla[indice] = celdaPtr->next;
+                delete celdaPtr;
+                cout << "Contacto eliminado: " << nombre << endl;
+                return;
+            }
+            
+            // Si el nodo a eliminar no es el primero:
+            Node* anterior = nullptr;  // Puntero al elemento anterior
+            while (celdaPtr != nullptr){
+                if(celdaPtr->nombre == nombre){
+                    anterior->next = celdaPtr->next;  // Enlazar el nodo anterior al nodo siguiente al nodo actual
+                    delete celdaPtr;  // Liberar la memoria del nodo actual
+                    cout << "Contacto eliminado: " << nombre << endl;
+                    return;  // Salir de la función después de eliminar el contacto
+                }
+                // Seguir iterando si no se encuentra coincidencia del nombre
+                anterior = celdaPtr;
+                celdaPtr = celdaPtr->next;
+            }
+
+        }
+
+        ~HashTable() {  // Destructor que se encarga de liberar memoria
+            for (int i = 0; i < tamano; ++i) {
+                Node* posicionActual = tabla[i];
+                while (posicionActual != nullptr) {
+                    Node* temp = posicionActual;
+                    posicionActual = posicionActual->next;
+                    delete temp; // Liberar la memoria del nodo actual
+                }
+            }
+        }
 };
 
 
