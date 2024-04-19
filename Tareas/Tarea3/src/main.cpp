@@ -148,13 +148,13 @@ class Contactos{
             header = nuevoContacto;
         }
         
-        void eliminarContacto(string nombre){
+        int eliminarContacto(string nombre){
             // Elimina un contacto de la lista
 
             // Verificar si la lista está vacía
             if (header == nullptr) {
-                cout << "La lista de contactos está vacía." << endl;
-                return;
+                cout << "La lista de contactos esta vacia." << endl;
+                return 0;
             }
             Node* temp = header;
             Node* prev = nullptr;
@@ -163,7 +163,7 @@ class Contactos{
                 header = temp->next;
                 delete temp;
                 cout << "Se ha eliminado " << nombre << endl;
-                return;
+                return 1;
             }
 
             while(temp != nullptr && temp->nombre != nombre){
@@ -173,7 +173,7 @@ class Contactos{
             
             if (temp == nullptr){  // Caso de que no se encontro el contacto
                 cout << "El contacto no se encuentra registrado " << endl;
-                return;
+                return 0;
             }
 
             prev->next = temp->next;
@@ -258,12 +258,14 @@ void EliminarContacto(Contactos &contactos, HashTable &tablaHash){
     cout << "Indique el nombre del contacto a eliminar" << endl;
     cin.ignore(); // Vaciar buffer
     getline(cin, nombre);
-    contactos.eliminarContacto(nombre);
-    cout << "Desea eliminar el contacto del cloud tambien?, digite 1 para sí o 0 para no: " << endl;
-    cin >> desicion;
+    int seElimino = contactos.eliminarContacto(nombre);
+    if (seElimino){
+        cout << "Desea eliminar el contacto del cloud tambien?, digite 1 para si o 0 para no: " << endl;
+        cin >> desicion;
 
-    if (desicion == 1){
-        tablaHash.EliminarContacto(nombre);
+        if (desicion == 1){
+            tablaHash.EliminarContacto(nombre);
+        }
     }
 }
 
