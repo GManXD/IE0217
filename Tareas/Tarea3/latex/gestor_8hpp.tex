@@ -1,0 +1,132 @@
+\doxysection{Referencia del archivo gestor.\+hpp}
+\hypertarget{gestor_8hpp}{}\label{gestor_8hpp}\index{gestor.hpp@{gestor.hpp}}
+
+
+Declaracion de clases y funciones.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+\doxysubsubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_node}{Node}}
+\begin{DoxyCompactList}\small\item\em Clase \doxylink{class_node}{Node} para la estructura de datos "{}lista enlazada"{}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_hash_table}{Hash\+Table}}
+\begin{DoxyCompactList}\small\item\em Clase \doxylink{class_hash_table}{Hash\+Table} para la estructura de datos "{}\+Hash table"{}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_contactos}{Contactos}}
+\begin{DoxyCompactList}\small\item\em Clase contactos que utiliza memoria del celular. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumeraciones}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{gestor_8hpp_a476f4db8d15ca2648699ffd0624cbad8}{opciones}} \{ \newline
+\mbox{\hyperlink{gestor_8hpp_a476f4db8d15ca2648699ffd0624cbad8a6d3d83cf619faa6fa2d0153b95acdb06}{AGREGAR\+\_\+\+CONTACTO}} = 1
+, \mbox{\hyperlink{gestor_8hpp_a476f4db8d15ca2648699ffd0624cbad8a85def5b236d8aa0953704eb781c6d4a0}{ELIMINAR\+\_\+\+CONTACTO}}
+, \mbox{\hyperlink{gestor_8hpp_a476f4db8d15ca2648699ffd0624cbad8add86579142b1fa19761d039551338f0e}{IMPRIMIR\+\_\+\+CLOUD}}
+, \mbox{\hyperlink{gestor_8hpp_a476f4db8d15ca2648699ffd0624cbad8a79fae5a254eec4f9e43e79a84cc6d6b4}{MOSTRAR\+\_\+\+CONTACTOS}}
+, \newline
+\mbox{\hyperlink{gestor_8hpp_a476f4db8d15ca2648699ffd0624cbad8adce475126bc4e905e1c004dba34ab38e}{SALIR}}
+, \mbox{\hyperlink{gestor_8hpp_a476f4db8d15ca2648699ffd0624cbad8a5b04c2eece7f03e5178eb1f2255af323}{OPCIONES\+\_\+\+MAX}}
+ \}
+\begin{DoxyCompactList}\small\item\em Contiene las unicas opciones posibles para el menu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{gestor_8hpp_a3031deeff2187ec857a99818c598191e}{agregar\+Contacto}} (\mbox{\hyperlink{class_contactos}{Contactos}} \&contactos, \mbox{\hyperlink{class_hash_table}{Hash\+Table}} \&table\+Hash)
+\begin{DoxyCompactList}\small\item\em Agrega un contacto en la memoria del celular y el cloud. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gestor_8hpp_aed535608dbc847263e06a089bfe52ae3}{Eliminar\+Contacto}} (\mbox{\hyperlink{class_contactos}{Contactos}} \&contactos, \mbox{\hyperlink{class_hash_table}{Hash\+Table}} \&tabla\+Hash)
+\begin{DoxyCompactList}\small\item\em Elimina un contacto de la memoria del celular y pregunta si del cloud tambien. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Declaracion de clases y funciones. 
+
+\begin{DoxyVersion}{Versión}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Fecha}
+19/04/2024 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Autor}
+Oscar Rojas Rojas @title Encabezados 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Documentación de enumeraciones}
+\Hypertarget{gestor_8hpp_a476f4db8d15ca2648699ffd0624cbad8}\label{gestor_8hpp_a476f4db8d15ca2648699ffd0624cbad8} 
+\index{gestor.hpp@{gestor.hpp}!opciones@{opciones}}
+\index{opciones@{opciones}!gestor.hpp@{gestor.hpp}}
+\doxysubsubsection{\texorpdfstring{opciones}{opciones}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{gestor_8hpp_a476f4db8d15ca2648699ffd0624cbad8}{opciones}}}
+
+
+
+Contiene las unicas opciones posibles para el menu. 
+
+\begin{DoxyEnumFields}{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AGREGAR\_CONTACTO@{AGREGAR\_CONTACTO}!gestor.hpp@{gestor.hpp}}\index{gestor.hpp@{gestor.hpp}!AGREGAR\_CONTACTO@{AGREGAR\_CONTACTO}}}\Hypertarget{gestor_8hpp_a476f4db8d15ca2648699ffd0624cbad8a6d3d83cf619faa6fa2d0153b95acdb06}\label{gestor_8hpp_a476f4db8d15ca2648699ffd0624cbad8a6d3d83cf619faa6fa2d0153b95acdb06} 
+AGREGAR\+\_\+\+CONTACTO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ELIMINAR\_CONTACTO@{ELIMINAR\_CONTACTO}!gestor.hpp@{gestor.hpp}}\index{gestor.hpp@{gestor.hpp}!ELIMINAR\_CONTACTO@{ELIMINAR\_CONTACTO}}}\Hypertarget{gestor_8hpp_a476f4db8d15ca2648699ffd0624cbad8a85def5b236d8aa0953704eb781c6d4a0}\label{gestor_8hpp_a476f4db8d15ca2648699ffd0624cbad8a85def5b236d8aa0953704eb781c6d4a0} 
+ELIMINAR\+\_\+\+CONTACTO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IMPRIMIR\_CLOUD@{IMPRIMIR\_CLOUD}!gestor.hpp@{gestor.hpp}}\index{gestor.hpp@{gestor.hpp}!IMPRIMIR\_CLOUD@{IMPRIMIR\_CLOUD}}}\Hypertarget{gestor_8hpp_a476f4db8d15ca2648699ffd0624cbad8add86579142b1fa19761d039551338f0e}\label{gestor_8hpp_a476f4db8d15ca2648699ffd0624cbad8add86579142b1fa19761d039551338f0e} 
+IMPRIMIR\+\_\+\+CLOUD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOSTRAR\_CONTACTOS@{MOSTRAR\_CONTACTOS}!gestor.hpp@{gestor.hpp}}\index{gestor.hpp@{gestor.hpp}!MOSTRAR\_CONTACTOS@{MOSTRAR\_CONTACTOS}}}\Hypertarget{gestor_8hpp_a476f4db8d15ca2648699ffd0624cbad8a79fae5a254eec4f9e43e79a84cc6d6b4}\label{gestor_8hpp_a476f4db8d15ca2648699ffd0624cbad8a79fae5a254eec4f9e43e79a84cc6d6b4} 
+MOSTRAR\+\_\+\+CONTACTOS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SALIR@{SALIR}!gestor.hpp@{gestor.hpp}}\index{gestor.hpp@{gestor.hpp}!SALIR@{SALIR}}}\Hypertarget{gestor_8hpp_a476f4db8d15ca2648699ffd0624cbad8adce475126bc4e905e1c004dba34ab38e}\label{gestor_8hpp_a476f4db8d15ca2648699ffd0624cbad8adce475126bc4e905e1c004dba34ab38e} 
+SALIR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OPCIONES\_MAX@{OPCIONES\_MAX}!gestor.hpp@{gestor.hpp}}\index{gestor.hpp@{gestor.hpp}!OPCIONES\_MAX@{OPCIONES\_MAX}}}\Hypertarget{gestor_8hpp_a476f4db8d15ca2648699ffd0624cbad8a5b04c2eece7f03e5178eb1f2255af323}\label{gestor_8hpp_a476f4db8d15ca2648699ffd0624cbad8a5b04c2eece7f03e5178eb1f2255af323} 
+OPCIONES\+\_\+\+MAX&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Documentación de funciones}
+\Hypertarget{gestor_8hpp_a3031deeff2187ec857a99818c598191e}\label{gestor_8hpp_a3031deeff2187ec857a99818c598191e} 
+\index{gestor.hpp@{gestor.hpp}!agregarContacto@{agregarContacto}}
+\index{agregarContacto@{agregarContacto}!gestor.hpp@{gestor.hpp}}
+\doxysubsubsection{\texorpdfstring{agregarContacto()}{agregarContacto()}}
+{\footnotesize\ttfamily void agregar\+Contacto (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_contactos}{Contactos}} \&}]{contactos,  }\item[{\mbox{\hyperlink{class_hash_table}{Hash\+Table}} \&}]{table\+Hash }\end{DoxyParamCaption})}
+
+
+
+Agrega un contacto en la memoria del celular y el cloud. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em contactos} & objeto de tipo contactos \\
+\hline
+{\em table\+Hash} & objeto de tipo \doxylink{class_hash_table}{Hash\+Table} \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gestor_8hpp_aed535608dbc847263e06a089bfe52ae3}\label{gestor_8hpp_aed535608dbc847263e06a089bfe52ae3} 
+\index{gestor.hpp@{gestor.hpp}!EliminarContacto@{EliminarContacto}}
+\index{EliminarContacto@{EliminarContacto}!gestor.hpp@{gestor.hpp}}
+\doxysubsubsection{\texorpdfstring{EliminarContacto()}{EliminarContacto()}}
+{\footnotesize\ttfamily void Eliminar\+Contacto (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_contactos}{Contactos}} \&}]{contactos,  }\item[{\mbox{\hyperlink{class_hash_table}{Hash\+Table}} \&}]{tabla\+Hash }\end{DoxyParamCaption})}
+
+
+
+Elimina un contacto de la memoria del celular y pregunta si del cloud tambien. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em contactos} & objeto de tipo contactos \\
+\hline
+{\em table\+Hash} & objeto de tipo \doxylink{class_hash_table}{Hash\+Table} \\
+\hline
+\end{DoxyParams}

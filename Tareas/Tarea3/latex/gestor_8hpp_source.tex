@@ -1,0 +1,77 @@
+\doxysection{gestor.\+hpp}
+\hypertarget{gestor_8hpp_source}{}\label{gestor_8hpp_source}\mbox{\hyperlink{gestor_8hpp}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ GESTOR\_HPP}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ GESTOR\_HPP}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <bits/stdc++.h>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <cstring>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{gestor_8hpp_a476f4db8d15ca2648699ffd0624cbad8}{opciones}}\{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//\ Opciones\ disponibles\ para\ el\ menu}}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{gestor_8hpp_a476f4db8d15ca2648699ffd0624cbad8a6d3d83cf619faa6fa2d0153b95acdb06}{AGREGAR\_CONTACTO}}\ =\ 1,}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{gestor_8hpp_a476f4db8d15ca2648699ffd0624cbad8a85def5b236d8aa0953704eb781c6d4a0}{ELIMINAR\_CONTACTO}},}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{gestor_8hpp_a476f4db8d15ca2648699ffd0624cbad8add86579142b1fa19761d039551338f0e}{IMPRIMIR\_CLOUD}},}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{gestor_8hpp_a476f4db8d15ca2648699ffd0624cbad8a79fae5a254eec4f9e43e79a84cc6d6b4}{MOSTRAR\_CONTACTOS}},}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{gestor_8hpp_a476f4db8d15ca2648699ffd0624cbad8adce475126bc4e905e1c004dba34ab38e}{SALIR}},}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{gestor_8hpp_a476f4db8d15ca2648699ffd0624cbad8a5b04c2eece7f03e5178eb1f2255af323}{OPCIONES\_MAX}}}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_node}{Node}}\{}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_node_a1d611a6aa34f58edcdc7279ed57b3381}{nombre}};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_node_a377827aa92cfb6104b247cd3e047c846}{telefono}};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_node}{Node}}*\ \mbox{\hyperlink{class_node_a2559a716f69ccaa76d648d9f1b83065e}{next}};}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{class_node_ab3fc89cac3d140181e25734cb3a398ad}{Node}}(\textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_node_a1d611a6aa34f58edcdc7279ed57b3381}{nombre}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_node_a377827aa92cfb6104b247cd3e047c846}{telefono}});}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_hash_table}{HashTable}}\{}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//\ Estructura\ que\ almacena\ una\ lista\ enlazada\ por\ cada\ contacto,\ de\ forma\ que\ la\ llave\ corresponde\ al\ nombre\ del\ contacto}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{//\ Cada\ valor\ corresponde\ a\ una\ lista\ enlazada\ que\ contiene\ una\ copia\ de\ los\ contactos\ correspondientes}}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ tamano;\ \ \ \ \ \textcolor{comment}{//\ Tamaño\ del\ hashTable}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ vector<Node*>\ tabla;\ \ \ \ \ \ \ \textcolor{comment}{//\ Vector\ que\ contiene\ punteros\ a\ nodos,\ este\ corresponde\ a\ los\ values\ de\ la\ Hash\ table}}
+\DoxyCodeLine{00068\ \ \ \ \ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Constructor\ de\ la\ clase,\ inicializa\ la\ tabla\ con\ nullptr}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hash_table_afae4a611241bf0edef50dee759ce06d6}{HashTable}}(\textcolor{keywordtype}{int}\ tamano);\ \ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_hash_table_a850bd21b3b22c5ffcccf6bc2b1a0a112}{Hashing}}(\textcolor{keywordtype}{string}\ nombre);\ \ \textcolor{comment}{//\ Algoritmo\ de\ hashing}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hash_table_ae3bd073167181b87e7e075c50c2f5684}{insertarContacto}}(\textcolor{keywordtype}{string}\ nombre,\ \textcolor{keywordtype}{int}\ numero);\ \ \ \textcolor{comment}{//\ Agrega\ un\ nuevo\ contacto\ a\ la\ nube}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hash_table_af549281c393604fa64723138e7c9746a}{EliminarContacto}}(\textcolor{keywordtype}{string}\ nombre);\ \ \ \textcolor{comment}{//\ Elimina\ un\ contacto\ de\ la\ nube}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hash_table_a6addcac42d3e126e45c977c313e336c4}{mostrar}}();\ \textcolor{comment}{//\ Imprimir\ Hash-\/Table\ y\ Listas\ Enlazadas}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hash_table_a9ce5569bb945880cacb29aaba6f3e3f9}{\string~HashTable}}();\ \ \textcolor{comment}{//\ Destructor\ que\ se\ encarga\ de\ liberar\ memoria}}
+\DoxyCodeLine{00102\ \};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00108\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_contactos}{Contactos}}\{}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_node}{Node}}*\ header;}
+\DoxyCodeLine{00111\ \ \ \ \ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_contactos_ade9086321ee75fa8743dc5c8318ec224}{Contactos}}();\ \ \textcolor{comment}{//\ Constructor\ que\ inicializa\ header\ en\ nullptr}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_contactos_aad4bd24fad48b7a7946103b226d5d7c5}{insertarContacto}}(\textcolor{keywordtype}{string}\ nombre,\ \textcolor{keywordtype}{int}\ telefono);\ \textcolor{comment}{//\ Agrega\ un\ contacto\ en\ la\ memoria\ del\ celular}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_contactos_ad568d49a01e95dfe9c913be1883c721d}{eliminarContacto}}(\textcolor{keywordtype}{string}\ nombre);\ \ \ \ \textcolor{comment}{//\ Elimina\ un\ contacto\ de\ la\ lista}}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_contactos_a4d9df21a8394aacb4b7cc0fae45fef63}{sort}}();\ \ \ \ \textcolor{comment}{//\ Ordenar\ de\ forma\ alfabetica}}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_contactos_ab8d6de3de970b6c3ef6216a8bca3f3ac}{mostrar}}();\ \ \ \ \ \textcolor{comment}{//\ Muestra\ los\ contactos\ de\ la\ memoria\ del\ celular}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_contactos_a09e117c676802b1f2ebd526d1dd10971}{\string~Contactos}}();\ \ \textcolor{comment}{//\ Destructor\ que\ libera\ la\ memoria}}
+\DoxyCodeLine{00143\ \};}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00150\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gestor_8hpp_a3031deeff2187ec857a99818c598191e}{agregarContacto}}(\mbox{\hyperlink{class_contactos}{Contactos}}\&\ contactos,\ \mbox{\hyperlink{class_hash_table}{HashTable}}\&\ tableHash);\ \textcolor{comment}{//\ Pasar\ parametros\ por\ referencia}}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{comment}{//\ Agrega\ un\ contacto\ en\ la\ memoria\ del\ celular\ y\ el\ cloud}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00158\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gestor_8hpp_aed535608dbc847263e06a089bfe52ae3}{EliminarContacto}}(\mbox{\hyperlink{class_contactos}{Contactos}}\ \&contactos,\ \mbox{\hyperlink{class_hash_table}{HashTable}}\ \&tablaHash);}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{comment}{//\ Elimina\ un\ contacto\ de\ la\ memoria\ del\ celular\ y\ pregunta\ si\ del\ cloud\ tambien}}
+\DoxyCodeLine{00160\ \ \ \ \ }
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ GESTOR\_HPP}}
+
+\end{DoxyCode}

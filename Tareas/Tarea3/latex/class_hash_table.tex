@@ -1,0 +1,123 @@
+\doxysection{Referencia de la clase Hash\+Table}
+\hypertarget{class_hash_table}{}\label{class_hash_table}\index{HashTable@{HashTable}}
+
+
+Clase \doxylink{class_hash_table}{Hash\+Table} para la estructura de datos "{}\+Hash table"{}.  
+
+
+
+
+{\ttfamily \#include $<$gestor.\+hpp$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hash_table_afae4a611241bf0edef50dee759ce06d6}{Hash\+Table}} (int tamano)
+\begin{DoxyCompactList}\small\item\em Constructor de clase que indica el tamaño de la estructura. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_hash_table_a850bd21b3b22c5ffcccf6bc2b1a0a112}{Hashing}} (string nombre)
+\begin{DoxyCompactList}\small\item\em Algoritmo hashing para indexar un par llave-\/valor, retorna el indice. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_hash_table_ae3bd073167181b87e7e075c50c2f5684}{insertar\+Contacto}} (string nombre, int numero)
+\begin{DoxyCompactList}\small\item\em Añade un contacto en la memoria cloud. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_hash_table_af549281c393604fa64723138e7c9746a}{Eliminar\+Contacto}} (string nombre)
+\begin{DoxyCompactList}\small\item\em Elimina un contacto de la nube. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_hash_table_a6addcac42d3e126e45c977c313e336c4}{mostrar}} ()
+\begin{DoxyCompactList}\small\item\em Imprime la Hash-\/\+Table y Listas Enlazadas. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_hash_table_a9ce5569bb945880cacb29aaba6f3e3f9}{\texorpdfstring{$\sim$}{\string~}\+Hash\+Table}} ()
+\begin{DoxyCompactList}\small\item\em Destructor de clase que libera memoria. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase \doxylink{class_hash_table}{Hash\+Table} para la estructura de datos "{}\+Hash table"{}. 
+
+\doxysubsection{Documentación de constructores y destructores}
+\Hypertarget{class_hash_table_afae4a611241bf0edef50dee759ce06d6}\label{class_hash_table_afae4a611241bf0edef50dee759ce06d6} 
+\index{HashTable@{HashTable}!HashTable@{HashTable}}
+\index{HashTable@{HashTable}!HashTable@{HashTable}}
+\doxysubsubsection{\texorpdfstring{HashTable()}{HashTable()}}
+{\footnotesize\ttfamily Hash\+Table\+::\+Hash\+Table (\begin{DoxyParamCaption}\item[{int}]{tamano }\end{DoxyParamCaption})}
+
+
+
+Constructor de clase que indica el tamaño de la estructura. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em tamano} & tamaño de la estructura \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_hash_table_a9ce5569bb945880cacb29aaba6f3e3f9}\label{class_hash_table_a9ce5569bb945880cacb29aaba6f3e3f9} 
+\index{HashTable@{HashTable}!````~HashTable@{\texorpdfstring{$\sim$}{\string~}HashTable}}
+\index{````~HashTable@{\texorpdfstring{$\sim$}{\string~}HashTable}!HashTable@{HashTable}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}HashTable()}{\string~HashTable()}}
+{\footnotesize\ttfamily Hash\+Table\+::\texorpdfstring{$\sim$}{\string~}\+Hash\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor de clase que libera memoria. 
+
+
+
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{class_hash_table_af549281c393604fa64723138e7c9746a}\label{class_hash_table_af549281c393604fa64723138e7c9746a} 
+\index{HashTable@{HashTable}!EliminarContacto@{EliminarContacto}}
+\index{EliminarContacto@{EliminarContacto}!HashTable@{HashTable}}
+\doxysubsubsection{\texorpdfstring{EliminarContacto()}{EliminarContacto()}}
+{\footnotesize\ttfamily void Hash\+Table\+::\+Eliminar\+Contacto (\begin{DoxyParamCaption}\item[{string}]{nombre }\end{DoxyParamCaption})}
+
+
+
+Elimina un contacto de la nube. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em nombre} & nombre del contacto \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_hash_table_a850bd21b3b22c5ffcccf6bc2b1a0a112}\label{class_hash_table_a850bd21b3b22c5ffcccf6bc2b1a0a112} 
+\index{HashTable@{HashTable}!Hashing@{Hashing}}
+\index{Hashing@{Hashing}!HashTable@{HashTable}}
+\doxysubsubsection{\texorpdfstring{Hashing()}{Hashing()}}
+{\footnotesize\ttfamily int Hash\+Table\+::\+Hashing (\begin{DoxyParamCaption}\item[{string}]{nombre }\end{DoxyParamCaption})}
+
+
+
+Algoritmo hashing para indexar un par llave-\/valor, retorna el indice. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em nombre} & nombre del contacto, el cual se utilizara como llave para acceder a este \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_hash_table_ae3bd073167181b87e7e075c50c2f5684}\label{class_hash_table_ae3bd073167181b87e7e075c50c2f5684} 
+\index{HashTable@{HashTable}!insertarContacto@{insertarContacto}}
+\index{insertarContacto@{insertarContacto}!HashTable@{HashTable}}
+\doxysubsubsection{\texorpdfstring{insertarContacto()}{insertarContacto()}}
+{\footnotesize\ttfamily void Hash\+Table\+::insertar\+Contacto (\begin{DoxyParamCaption}\item[{string}]{nombre,  }\item[{int}]{numero }\end{DoxyParamCaption})}
+
+
+
+Añade un contacto en la memoria cloud. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em nombre} & nombre del contacto \\
+\hline
+{\em numero} & numero de telefono del contacto \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_hash_table_a6addcac42d3e126e45c977c313e336c4}\label{class_hash_table_a6addcac42d3e126e45c977c313e336c4} 
+\index{HashTable@{HashTable}!mostrar@{mostrar}}
+\index{mostrar@{mostrar}!HashTable@{HashTable}}
+\doxysubsubsection{\texorpdfstring{mostrar()}{mostrar()}}
+{\footnotesize\ttfamily void Hash\+Table\+::mostrar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Imprime la Hash-\/\+Table y Listas Enlazadas. 
+
+
+
+La documentación de esta clase está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{gestor_8hpp}{gestor.\+hpp}}\item 
+\mbox{\hyperlink{gestor_8cpp}{gestor.\+cpp}}\end{DoxyCompactItemize}
