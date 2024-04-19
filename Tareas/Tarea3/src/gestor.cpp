@@ -7,10 +7,10 @@ Node::Node(string nombre, int telefono) : nombre(nombre), telefono(telefono), ne
 // Constructor de la clase, inicializa la tabla con nullptr
 HashTable::HashTable(int tamano) : tamano(tamano), tabla(tamano, nullptr) {}
 
-int HashTable::Hashing(string key) {
+int HashTable::Hashing(string nombre) {
     // Algoritmo de hashing
     int suma = 0;
-    for (char c : key) {
+    for (char c : nombre) {
         suma += c;
     }
     return suma % tamano;
