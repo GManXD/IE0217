@@ -16,13 +16,13 @@ int main(){
     std::vector<int> myvector (myints, myints+8);
 
     // Usar el comparador por defecto (<)
-    std::sort (myvector.begin(), myvector.begin()+4);
+    std::sort (myvector.begin(), myvector.begin()+4);   // Ordenar los primeros 4
 
     // Usar la funcion de comparador
-    std::sort (myvector.begin()+4, myvector.end(), myfunction);
+    std::sort (myvector.begin()+4, myvector.end(), myfunction); // Ordenar los ultimos 4
 
     // Usar el objeto de comparador
-    std::sort (myvector.begin(), myvector.end(), myobject);
+    std::sort (myvector.begin(), myvector.end(), myobject);     // Ordenar todos
 
     //imprimir contenido
     std::cout << "myvector contains :";
