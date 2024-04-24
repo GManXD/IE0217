@@ -3,8 +3,10 @@
 #include <algorithm>
 #include <vector>
 
+// Funcion para comparar 2 valores
 bool myfunction (int i , int j) {return (i<j);}
 
+// Struct para comparar 2 valores
 struct myclass{
     bool operator() (int i, int j) {return (i<j);}
 } myobject;
