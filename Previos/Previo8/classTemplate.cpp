@@ -13,10 +13,15 @@ class Number {
         Number(T n) : num(n) {}
 
         // Metodo que retorna una variable de tipo T
-        T getNum() {
-            return num;
-        }
+        T getNum();  // Prototipo de funcion
 };
+
+// Definicion de la funcion
+template <class T>
+T Number<T>::getNum(){
+    return num;
+}
+
 
 int main() {
     // Crear object con parametro tipo int 
