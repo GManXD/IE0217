@@ -1,9 +1,10 @@
 #include <iostream>
+#include <stdexcept>
 
 using namespace std;
 
 int main() {
-    double numerador, denominador, division;
+    int numerador, denominador, resultado;
 
     cout << "Ingrese el numerador: ";
     cin >> numerador;
@@ -14,17 +15,18 @@ int main() {
     try {
         // Excepción si el denominador es 0
         if (denominador == 0) {
-        throw 0;  // Lo manda al cath
+            throw runtime_error("Error: el denominador no puede ser cero.");  // Lo manda al catch
         }
 
         // No se ejecuta si el denominador es 0
-        division = numerador / denominador;
-        cout << numerador << " / " << denominador << " = " << division << endl;
+        resultado = numerador / denominador;
+        cout << numerador << " / " << denominador << " = " << resultado << endl;
         
     }
     // Se ejecuta si hubo una excepcion
-    catch (int num_exception) {
-        cout << "Error: No se puede dividir por " << num_exception << endl;
+    catch (const exception& e) {
+        // runtime_error
+        cerr << e.what() << endl;
     }
 
     return 0;
