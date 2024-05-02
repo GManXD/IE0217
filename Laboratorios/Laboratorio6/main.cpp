@@ -60,7 +60,7 @@ int main(){
         Statistics<int> statsEmpty(emptyData);  // Salta un error que atrapa el catch()
 
     } catch(const std::invalid_argument& e){  // Catch de tipo invalid_argument
-        // Salida de error estandar
+        // Salida de error estandar: 
         std::cerr << "Excepcion encontrada: " << e.what() << std::endl;
 
     }
