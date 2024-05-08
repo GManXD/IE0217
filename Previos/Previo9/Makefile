@@ -1,5 +1,8 @@
 #Nombre del programa de salida
-TARGET gestion_estudiantes.exe
+TARGET = gestion_estudiantes.exe
+
+#Objetivo predeterminado
+all : $(TARGET)
 
 #Compilador de C++
 CXX = g++

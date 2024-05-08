@@ -1,4 +1,4 @@
-#ifndef ESTUDIANTE HPP
+#ifndef ESTUDIANTE_HPP
 #define ESTUDIANTE_HPP
 
 #include <string>
@@ -15,4 +15,4 @@ private:
 };
 
 
-#endif
+#endif  // ESTUDIANTE_HPP
