@@ -81,71 +81,46 @@ vector <N> preguntarValores(int filas, int columnas){
 
 
 int main(){
-    int tipo1, tipo2;
-    int filas1, columnas1, filas2, columnas2;
+    vector<pair<void*, int>> punteros;
+    int tipo;
+    int filas, columnas;
 
-    cout << "Se debe crear 2 matrices. \nMatriz1 :" << endl;
+    cout << "Se debe crear 2 matrices." << endl;
 
-    cout << "Indique la cantidad de columnas :" << endl;
-    cin >> columnas1;
-    cout << "Indique la cantidad de filas: " << endl;
-    cin >> filas1;
-    if (filas1 <= 0 || columnas1 <= 0) {  // Caso de que filas o columnas no positivas, lanzar excepcion
-        throw std::invalid_argument("Las dimensiones de la matriz deben ser positivas");
+    for (int i = 0; i < 2; ++i) {
+        cout << "Matriz " << i + 1 << ":" << endl;
+
+        cout << "Indique la cantidad de columnas :" << endl;
+        cin >> columnas;
+        cout << "Indique la cantidad de filas: " << endl;
+        cin >> filas;
+
+        if (filas <= 0 || columnas <= 0) {  
+            throw std::invalid_argument("Las dimensiones de la matriz deben ser positivas");
+        }
+
+        cout << "Indique el tipo de dato de la matriz (Escriba el numero correspondiente a la opcion): "
+            << "\n1. int" << "\n2. float" << "\n3. Complex" << endl;
+        cin >> tipo;
+
+        if (tipo == 1) {
+            vector<int> valores = preguntarValores<int>(filas, columnas);
+            punteros.push_back({ new Matriz<int>(filas, columnas, valores), tipo });
+        }
+        else if (tipo == 2) {
+            vector<float> valores = preguntarValores<float>(filas, columnas);
+            punteros.push_back({ new Matriz<float>(filas, columnas, valores), tipo });
+        }
+        else if (tipo == 3) {
+            vector<complex<float>> valores = preguntarValores<complex<float>>(filas, columnas);
+            punteros.push_back({ new Matriz<complex<float>>(filas, columnas, valores), tipo });
+        }
+        else {
+            cout << "Opción inválida." << endl;
+            --i; // Para repetir la iteración y volver a solicitar la entrada del usuario
+        }
     }
-
-    cout << "\nIndique el tipo de dato de la primera matriz (Escriba el numero correspondiente a la opcion): " 
-    << "\n1. int" << "\n2. float" << "\n3. Complex" << endl;
-    cin >> tipo1;
-
-    if (tipo1 == 1){
-        vector<int> valores1 = preguntarValores<int>(filas1, columnas1); // Plantilla de funcion con int
-        Matriz<int> obj1(filas1, columnas1, valores1);       // Plantilla de clase con int
-
-
-    }
-    else if (tipo1 == 2){
-        vector<float> valores1 = preguntarValores<float>(filas1, columnas1);     // Plantilla de funcion con float
-        Matriz<float> obj1(filas1, columnas1, valores1);     // Plantilla de clase con float
-    }
-    else if (tipo1 == 3){
-        vector<complex<float>> valores1 = preguntarValores<complex<float>>(filas1, columnas1);  // Plantilla de funcion con complex
-        Matriz<complex<float>> obj1(filas1, columnas1, valores1);    // Plantilla de clase con complex
-    }
-
-
-    cout << "\nMatriz2 :" << endl;
-
-    cout << "Indique la cantidad de columnas :" << endl;
-    cin >> columnas2;
-    cout << "Indique la cantidad de filas: " << endl;
-    cin >> filas2;
-    if (filas2 <= 0 || columnas2 <= 0) {  // Caso de que filas o columnas no positivas, lanzar excepcion
-        throw std::invalid_argument("Las dimensiones de la matriz deben ser positivas");
-    }
-
-    cout << "\nIndique el tipo de dato de la segunda matriz (Escriba el numero correspondiente a la opcion): " 
-    << "\n1. int" << "\n2. float" << "\n3. Complex" << endl;
-    cin >> tipo2;
-
-    if (tipo2 == 1){
-        vector<int> valores2 = preguntarValores<int>(filas2, columnas2); // Plantilla de funcion con int
-        Matriz<int> obj2(filas2, columnas2, valores2);       // Plantilla de clase con int
-
-    }
-    else if (tipo2 == 2){
-        vector<float> valores2 = preguntarValores<float>(filas2, columnas2);     // Plantilla de funcion con float
-        Matriz<float> obj2(filas2, columnas2, valores2);     // Plantilla de clase con float
-    }
-    else if (tipo2 == 3){
-        vector<complex<float>> valores2 = preguntarValores<complex<float>>(filas2, columnas2);  // Plantilla de funcion con complex
-
-        Matriz<complex<float>> obj2(filas2, columnas2, valores2);    // Plantilla de clase con complex
-    }
-
-
     // PARTE MENU
-
     int opcion;
     do{
         cout << "Seleccione su opcion" << endl;
@@ -158,8 +133,44 @@ int main(){
         // Casos del menu
         switch (opcion){
             case CAMBIAR_DIMENSIONES_Y_VALORES:
-                // Cambiar dimensiones y valores de la matriz
+                int num_matriz;
+                int nuevasFilas;
+                int nuevasColumnas;
+                cout << "Cual matriz desea cambiar? (Seleccione el numero correspondiente)" << "\n1. Matriz 1 \n2. Matriz 2" << endl;
+                cin >> num_matriz;
+                cout << "Indique la nueva cantidad de filas: " << endl;
+                cin >> nuevasFilas;
+                cout << "Indique la nueva cantidad de columnas: " << endl;
+                cin >> nuevasColumnas;
+
+                if (nuevasFilas <= 0 || nuevasColumnas <= 0) {
+                    throw std::invalid_argument("Las dimensiones de la matriz deben ser positivas");
+                }
+
+                cout << "Ingrese los nuevos valores para la matriz " << num_matriz << ":" << endl;
+                if (punteros[num_matriz - 1].second == 1) {
+                    Matriz<int>* matriz_int = static_cast<Matriz<int>*>(punteros[num_matriz - 1].first);
+                    vector<int> nuevos_valores = preguntarValores<int>(nuevasFilas, nuevasColumnas);
+                    matriz_int->setDimensiones(nuevasFilas, nuevasColumnas);
+                    // Llenar la matriz con los nuevos valores
+                    matriz_int->llenarMatriz();
+                } else if (punteros[num_matriz - 1].second == 2) {
+                    Matriz<float>* matriz_float = static_cast<Matriz<float>*>(punteros[num_matriz - 1].first);
+                    vector<float> nuevos_valores = preguntarValores<float>(nuevasFilas, nuevasColumnas);
+                    matriz_float->setDimensiones(nuevasFilas, nuevasColumnas);
+                    // Llenar la matriz con los nuevos valores
+                    matriz_float->llenarMatriz();
+                } else if (punteros[num_matriz - 1].second == 3) {
+                    Matriz<complex<float>>* matriz_complex = static_cast<Matriz<complex<float>>*>(punteros[num_matriz - 1].first);
+                    vector<complex<float>> nuevos_valores = preguntarValores<complex<float>>(nuevasFilas, nuevasColumnas);
+                    matriz_complex->setDimensiones(nuevasFilas, nuevasColumnas);
+                    // Llenar la matriz con los nuevos valores
+                    matriz_complex->llenarMatriz();
+                } else {
+                    cout << "Tipo de matriz no válido." << endl;
+                }
                 break;
+                
             case OPERACION:
                 // Realizar operaciones con las matrices
                 break;
@@ -180,5 +191,15 @@ int main(){
         }
     } while (opcion != SALIR);
 
+    // Liberar memoria de las matrices
+    for (auto& matriz : punteros) {
+        if (matriz.second == 1) {
+            delete static_cast<Matriz<int>*>(matriz.first);
+        } else if (matriz.second == 2) {
+            delete static_cast<Matriz<float>*>(matriz.first);
+        } else if (matriz.second == 3) {
+            delete static_cast<Matriz<complex<float>>*>(matriz.first);
+        }
+    }
     return 0;
 }
