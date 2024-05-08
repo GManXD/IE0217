@@ -3,8 +3,9 @@
 
 #include <string>
 
-class Estudiante {  // Constructor
+class Estudiante {  
     public:
+        // Constructor
         Estudiante(const std::string& nombre, int edad);
         void mostrarDatos();    // Muestra nombre y edad
 
