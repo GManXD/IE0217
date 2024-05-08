@@ -8,6 +8,14 @@
 
 using namespace std;
 
+class  OperacionesBasicas{
+
+};
+
+class ValidadorDeEntrada{
+
+};
+
 enum opciones{
     // Opciones disponibles para el menu
     CAMBIAR_DIMENSIONES_Y_VALORES = 1,
