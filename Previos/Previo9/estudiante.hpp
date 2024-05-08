@@ -3,15 +3,14 @@
 
 #include <string>
 
-class Estudiante {
-public:
-    Estudiante(const std::string& nombre, int edad);
-    void mostrarDatos();
+class Estudiante {  // Constructor
+    public:
+        Estudiante(const std::string& nombre, int edad);
+        void mostrarDatos();    // Muestra nombre y edad
 
-private:
-    std::string nombre;
-    int edad;
-    int edad2;
+    private:
+        std::string nombre;
+        int edad;
 };
 
 
