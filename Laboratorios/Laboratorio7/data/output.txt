@@ -1,0 +1,5 @@
+Este es un archivo de ejemplo que contiene algunas ocurrencias de la palabra "bar".
+La palabra "bar" puede aparecer en diferentes partes del texto.
+Por ejemplo, aquí está otra aparición de "bar".
+También podemos tener "bar" al principio o al final de una línea.
+holabarhola

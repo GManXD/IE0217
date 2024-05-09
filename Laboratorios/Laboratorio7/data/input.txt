@@ -1,0 +1,5 @@
+Este es un archivo de ejemplo que contiene algunas ocurrencias de la palabra "foo".
+La palabra "foo" puede aparecer en diferentes partes del texto.
+Por ejemplo, aquí está otra aparición de "foo".
+También podemos tener "foo" al principio o al final de una línea.
+holafoohola

@@ -1,5 +1,6 @@
 # Instrucciones de ejecución
-Para compilar el programa se debe ejecutar el siguiente comando en la ubicacion donde se encuentra el directorio "Laboratorios\Laboratorio6": 
+El programa agarra un archivo "input.txt" ubicada en "Laboratorios/Laboratorio7/data" y busca todas las palabras que contengan "foo" y crea un archivo "output.txt" en el que se remplaza las palabras "foo" por "bar"
+Para compilar el programa se debe ejecutar el siguiente comando en la ubicacion donde se encuentra el directorio "Laboratorios\Laboratorio7": 
 
 ```bash
   mingw32-make all
