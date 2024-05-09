@@ -1,5 +1,7 @@
 # Instrucciones de ejecución
-El programa agarra un archivo "input.txt" ubicada en "Laboratorios/Laboratorio7/data" y busca todas las palabras que contengan "foo" y crea un archivo "output.txt" en el que se remplaza las palabras "foo" por "bar"
+El programa agarra un archivo "input.txt" ubicada en "Laboratorios/Laboratorio7/data" y busca todas las palabras que contengan "foo" y crea un archivo "output.txt" en el que se remplaza las palabras "foo" por "bar"  
+**Nota: debe proporcionar el archivo "input.txt"**  
+
 Para compilar el programa se debe ejecutar el siguiente comando en la ubicacion donde se encuentra el directorio "Laboratorios\Laboratorio7": 
 
 ```bash
@@ -12,8 +14,9 @@ Y para ejecutar el programa se ejecuta de la siguiente manera en la misma ubicac
 ```bash
   ./bin/textprocessor -f data/input.txt -o data/output.txt -search "foo" -replace "bar"
 ```
+Si así lo desea tambien puede reemplazar "foo" por otro patron de busqueda y "bar" por la palabra a la cual desea que se remplace
 
-Si desea limpiar los archivos binarios debe ejecutar:
+Por último, si desea limpiar los archivos binarios debe ejecutar:
 
 ```bash
   mingw32-make all
