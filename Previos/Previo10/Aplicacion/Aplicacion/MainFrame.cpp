@@ -18,7 +18,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) 
     wxSlider* slider = new wxSlider(panel, wxID_ANY, 25, 0, 100, wxPoint(100, 250), wxSize(200, -1));                   // Un slider 
 
     wxGauge* gauge = new wxGauge(panel, wxID_ANY, 100, wxPoint(500, 255), wxSize(200, -1));
-    gauge-> SetValue(50);
+    gauge->SetValue(50);
 
     wxArrayString choices;  // Arreglo de strings, contiene las pciones de Choice
     choices.Add("Item A");
@@ -29,7 +29,9 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) 
     choice->Select(0);      // Selecciona por defecto el elemento 0 de el array para el Choice
 
     wxSpinCtrl* spinCtrl = new wxSpinCtrl(panel, wxID_ANY, "", wxPoint(550, 375), wxSize(100, -1));     // SpinCtrl
-        
+
     wxListBox* listBox = new wxListBox(panel, wxID_ANY, wxPoint(150, 475), wxSize(100, -1), choices);       // ListBox, similar al Choice
 
     wxRadioBox* radioBox = new wxRadioBox(panel, wxID_ANY, "RadioBox", wxPoint(485, 475), wxDefaultSize, choices);  // RadioBox, selecciona uno
+
+}

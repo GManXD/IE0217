@@ -1,8 +1,3 @@
 ﻿  MainFrame.cpp
+C:\Users\Usuario\Desktop\Estructuras\IE0217\Previos\Previo10\Aplicacion\Aplicacion\MainFrame.cpp(6,81): error C1075: "{": no se encontró ningún token coincidente
   MyApp.cpp
-  Generando código
-  5 of 242 functions ( 2.1%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
-  Generación de código finalizada
-  Aplicacion.vcxproj -> C:\Users\Usuario\Desktop\Estructuras\IE0217\Previos\Previo10\Aplicacion\x64\Release\Aplicacion.exe
