@@ -22,9 +22,9 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) 
     gauge->SetValue(50);
 
     wxArrayString choices;  // Arreglo de strings, contiene las pciones de Choice
+    choices.Add("Item C");
     choices.Add("Item A");
-    choices.Add("Item B");
-    choices.Add("Item C"); 
+    choices.Add("Item B"); 
 
     wxChoice* choice = new wxChoice(panel, wxID_ANY, wxPoint(150, 375), wxSize(100, -1), choices, wxCB_SORT);  // Un Choice
     choice->Select(0);      // Selecciona por defecto el elemento 0 de el array para el Choice
