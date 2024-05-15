@@ -62,7 +62,12 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) 
     button2->Bind(wxEVT_BUTTON, &MainFrame::OnButton2Clicked, this);  // Evento de presionar el boton2
     
 
-    CreateStatusBar();
+
+    // Eventos de Mouse
+    //panel->Bind(wxEVT_LEFT_DOWN, &MainFrame::OnMouseEvent, this);   // Evento de click del mouse
+    panel->Bind(wxEVT_MOTION, &MainFrame::OnMouseEvent,this);  //Evento de movimiento de mouse
+    wxStatusBar* statusBar = CreateStatusBar();
+    statusBar->SetDoubleBuffered(true);     // Para contrarrestar el parpadeo
 }
 
 
@@ -101,4 +106,10 @@ void MainFrame::OnButton2Clicked(wxCommandEvent& evt) {  // Evento de presionar 
 void MainFrame::OnClose(wxCloseEvent& evt) {
     wxLogMessage("Frame Close");  // Desplegar mensaje
     evt.Skip(); // Para que se pueda cerrar la ventana
+}
+
+void MainFrame::OnMouseEvent(wxMouseEvent& evt) {
+    wxPoint mousePos = evt.GetPosition();
+    wxString message = wxString::Format("Mouse Event Detected! (x=%d y=%d)", mousePos.x, mousePos.y);
+    wxLogStatus(message);
 }

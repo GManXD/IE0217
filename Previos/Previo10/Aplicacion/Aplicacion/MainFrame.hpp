@@ -18,5 +18,7 @@ private:
 	void OnListBoxChanged(wxCommandEvent& evt); // Evento de cambiar list Box
 
 	void OnClose(wxCloseEvent& evt);	// Evento de cerrar la Ventana
+
+	void OnMouseEvent(wxMouseEvent& evt); // Evento de mouse
 	wxDECLARE_EVENT_TABLE();
 };
