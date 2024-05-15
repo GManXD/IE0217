@@ -4,15 +4,13 @@
 
 
 enum IDs {  // ID de los controles
-    BUTTON_ID = 2,
-    SLIDER_ID = 3,
-    TEXT_ID = 4
+    SLIDER_ID = 2,
+    TEXT_ID = 3
 };
 
 
 
-wxBEGIN_EVENT_TABLE(MainFrame, wxFrame)     // EVENTOS
-    EVT_BUTTON(BUTTON_ID, MainFrame::OnButtonClicked)
+wxBEGIN_EVENT_TABLE(MainFrame, wxFrame)     // EVENTOS  (Manejo estatico)
     EVT_SLIDER(SLIDER_ID, MainFrame::OnSliderChanged)
     EVT_TEXT(TEXT_ID, MainFrame::OnTextChanged)
 wxEND_EVENT_TABLE()
@@ -22,7 +20,8 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) 
 
     wxPanel* panel = new wxPanel(this);     // Panel donde se mostraran todos los controles
 
-    wxButton* button = new wxButton(panel, BUTTON_ID, "Button", wxPoint(150, 50), wxSize(100, 35), wxBU_LEFT);                      // Un boton
+    wxButton* button1 = new wxButton(panel, wxID_ANY, "Button1", wxPoint(150, 50), wxSize(100, 35), wxBU_LEFT);        // Boton1
+    wxButton* button2 = new wxButton(panel, wxID_ANY, "Button2", wxPoint(150, 80), wxSize(100, 35), wxBU_LEFT);         // Boton2
 
     wxCheckBox* checkBox = new wxCheckBox(panel, wxID_ANY, "CheckBox", wxPoint(550, 55), wxDefaultSize, wxCHK_3STATE | wxCHK_ALLOW_3RD_STATE_FOR_USER);                               // Una caja de check
 
@@ -56,12 +55,19 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) 
     radioBox->Bind(wxEVT_RADIOBOX, &MainFrame::OnRadioBoxChanged, this);
 
     listBox->Unbind(wxEVT_LISTBOX, &MainFrame::OnListBoxChanged, this);  // Desenlazar
+
+    this->Bind(wxEVT_BUTTON, &MainFrame::OnAnyButtonClicked, this);  // Evento de presionar cualquier boton
+    button1->Bind(wxEVT_BUTTON, &MainFrame::OnButton1Clicked, this);   // Evento de presionar el boton1
+    button2->Bind(wxEVT_BUTTON, &MainFrame::OnButton2Clicked, this);  // Evento de presionar el boton2
+    
+
     CreateStatusBar();
 }
 
 
-void MainFrame::OnButtonClicked(wxCommandEvent& evt) {  // Evento de presionar boton
-    wxLogStatus("Button Clicked");
+void MainFrame::OnButton1Clicked(wxCommandEvent& evt) {  // Evento de presionar boton1
+    wxLogStatus("Button1 Clicked");
+    evt.Skip(); // Continuar la propagacion del evento
 }
 
 void MainFrame::OnSliderChanged(wxCommandEvent& evt) {  // Evento de deslizar el slider
@@ -80,4 +86,13 @@ void MainFrame::OnRadioBoxChanged(wxCommandEvent& evt) {
 
 void MainFrame::OnListBoxChanged(wxCommandEvent& evt) {
     wxLogStatus("List Box Changed");
+}
+
+void MainFrame::OnAnyButtonClicked(wxCommandEvent& evt) {  // Evento de presionar cualquier boton
+    wxLogMessage("Button Clicked");
+}
+
+void MainFrame::OnButton2Clicked(wxCommandEvent& evt) {  // Evento de presionar boton2
+    wxLogStatus("Button2 Clicked");
+    evt.Skip(); // Continuar la propagacion del evento
 }
