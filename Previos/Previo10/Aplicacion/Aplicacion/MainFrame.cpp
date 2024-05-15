@@ -50,6 +50,12 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) 
 
     wxRadioBox* radioBox = new wxRadioBox(panel, wxID_ANY, "RadioBox", wxPoint(555, 450), wxDefaultSize, choices, 3, wxRA_SPECIFY_ROWS);  // RadioBox, selecciona uno
 
+
+    // Eventos de manejo Dinamico:
+    listBox->Bind(wxEVT_LISTBOX, &MainFrame::OnListBoxChanged, this);
+    radioBox->Bind(wxEVT_RADIOBOX, &MainFrame::OnRadioBoxChanged, this);
+
+    listBox->Unbind(wxEVT_LISTBOX, &MainFrame::OnListBoxChanged, this);  // Desenlazar
     CreateStatusBar();
 }
 
@@ -66,4 +72,12 @@ void MainFrame::OnSliderChanged(wxCommandEvent& evt) {  // Evento de deslizar el
 void MainFrame::OnTextChanged(wxCommandEvent& evt) {    // Evento de cambiar el texto
     wxString str = wxString::Format("Text: %s", evt.GetString());
     wxLogStatus(str);
+}
+
+void MainFrame::OnRadioBoxChanged(wxCommandEvent& evt) {
+    wxLogStatus("Radio Box Changed");
+}
+
+void MainFrame::OnListBoxChanged(wxCommandEvent& evt) {
+    wxLogStatus("List Box Changed");
 }
