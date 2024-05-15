@@ -16,5 +16,7 @@ private:
 	void OnButton2Clicked(wxCommandEvent& evt);  // Evento de presionar boton2
 	void OnRadioBoxChanged(wxCommandEvent& evt);  // Evento de cambiar la RadioBox
 	void OnListBoxChanged(wxCommandEvent& evt); // Evento de cambiar list Box
+
+	void OnClose(wxCloseEvent& evt);	// Evento de cerrar la Ventana
 	wxDECLARE_EVENT_TABLE();
 };

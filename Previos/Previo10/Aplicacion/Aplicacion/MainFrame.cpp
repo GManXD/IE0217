@@ -56,6 +56,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) 
 
     listBox->Unbind(wxEVT_LISTBOX, &MainFrame::OnListBoxChanged, this);  // Desenlazar
 
+    this->Bind(wxEVT_CLOSE_WINDOW, &MainFrame::OnClose, this);  // Evento de cerrar ventana
     this->Bind(wxEVT_BUTTON, &MainFrame::OnAnyButtonClicked, this);  // Evento de presionar cualquier boton
     button1->Bind(wxEVT_BUTTON, &MainFrame::OnButton1Clicked, this);   // Evento de presionar el boton1
     button2->Bind(wxEVT_BUTTON, &MainFrame::OnButton2Clicked, this);  // Evento de presionar el boton2
@@ -95,4 +96,9 @@ void MainFrame::OnAnyButtonClicked(wxCommandEvent& evt) {  // Evento de presiona
 void MainFrame::OnButton2Clicked(wxCommandEvent& evt) {  // Evento de presionar boton2
     wxLogStatus("Button2 Clicked");
     evt.Skip(); // Continuar la propagacion del evento
+}
+
+void MainFrame::OnClose(wxCloseEvent& evt) {
+    wxLogMessage("Frame Close");  // Desplegar mensaje
+    evt.Skip(); // Para que se pueda cerrar la ventana
 }
