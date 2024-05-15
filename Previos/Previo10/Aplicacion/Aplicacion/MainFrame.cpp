@@ -65,7 +65,26 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) 
 
     // Eventos de Mouse
     //panel->Bind(wxEVT_LEFT_DOWN, &MainFrame::OnMouseEvent, this);   // Evento de click del mouse
-    panel->Bind(wxEVT_MOTION, &MainFrame::OnMouseEvent,this);  //Evento de movimiento de mouse
+    panel->Bind(wxEVT_MOTION, &MainFrame::OnMouseEvent,this);  //Evento de movimiento de mouse en el panel
+    
+    // Para detectar movimiento en los controles:
+    button1->Bind(wxEVT_MOTION, &MainFrame::OnMouseEvent, this); 
+    button2->Bind(wxEVT_MOTION, &MainFrame::OnMouseEvent, this);  
+    checkBox->Bind(wxEVT_MOTION, &MainFrame::OnMouseEvent, this);  
+    staticText->Bind(wxEVT_MOTION, &MainFrame::OnMouseEvent, this);  
+    textCtrl->Bind(wxEVT_MOTION, &MainFrame::OnMouseEvent, this);  
+    slider->Bind(wxEVT_MOTION, &MainFrame::OnMouseEvent, this);
+    gauge->Bind(wxEVT_MOTION, &MainFrame::OnMouseEvent, this);
+    choice->Bind(wxEVT_MOTION, &MainFrame::OnMouseEvent, this);
+    spinCtrl->Bind(wxEVT_MOTION, &MainFrame::OnMouseEvent, this);
+    listBox->Bind(wxEVT_MOTION, &MainFrame::OnMouseEvent, this);
+    radioBox->Bind(wxEVT_MOTION, &MainFrame::OnMouseEvent, this);
+
+
+
+
+
+
     wxStatusBar* statusBar = CreateStatusBar();
     statusBar->SetDoubleBuffered(true);     // Para contrarrestar el parpadeo
 }
@@ -109,7 +128,8 @@ void MainFrame::OnClose(wxCloseEvent& evt) {
 }
 
 void MainFrame::OnMouseEvent(wxMouseEvent& evt) {
-    wxPoint mousePos = evt.GetPosition();
+    wxPoint mousePos = wxGetMousePosition();   // Posicion absoluta basada en la pantalla
+    mousePos = this->ScreenToClient(mousePos); // Posicion relativa basado en el frame
     wxString message = wxString::Format("Mouse Event Detected! (x=%d y=%d)", mousePos.x, mousePos.y);
     wxLogStatus(message);
 }
