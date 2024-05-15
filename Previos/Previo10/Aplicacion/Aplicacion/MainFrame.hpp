@@ -20,5 +20,6 @@ private:
 	void OnClose(wxCloseEvent& evt);	// Evento de cerrar la Ventana
 
 	void OnMouseEvent(wxMouseEvent& evt); // Evento de mouse
+	void OnKeyEvent(wxKeyEvent& evt); // Evento de teclado
 	wxDECLARE_EVENT_TABLE();
 };

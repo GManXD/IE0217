@@ -80,9 +80,8 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) 
     listBox->Bind(wxEVT_MOTION, &MainFrame::OnMouseEvent, this);
     radioBox->Bind(wxEVT_MOTION, &MainFrame::OnMouseEvent, this);
 
-
-
-
+    // Evento de teclado
+    panel->Bind(wxEVT_CHAR_HOOK, &MainFrame::OnKeyEvent, this); // Al presionar una tecla
 
 
     wxStatusBar* statusBar = CreateStatusBar();
@@ -127,9 +126,21 @@ void MainFrame::OnClose(wxCloseEvent& evt) {
     evt.Skip(); // Para que se pueda cerrar la ventana
 }
 
-void MainFrame::OnMouseEvent(wxMouseEvent& evt) {
+void MainFrame::OnMouseEvent(wxMouseEvent& evt) {   // Evento de mouse
     wxPoint mousePos = wxGetMousePosition();   // Posicion absoluta basada en la pantalla
     mousePos = this->ScreenToClient(mousePos); // Posicion relativa basado en el frame
     wxString message = wxString::Format("Mouse Event Detected! (x=%d y=%d)", mousePos.x, mousePos.y);
     wxLogStatus(message);
+}
+
+void MainFrame::OnKeyEvent(wxKeyEvent& evt) {   // Evento de teclado
+    wxChar keyChar = evt.GetUnicodeKey();
+
+    if (keyChar == WXK_NONE) {  // Caso de que sea una tecla especial
+        int keyCode = evt.GetKeyCode();
+        wxLogStatus("Key Event %d", keyCode);
+    }
+    else {
+        wxLogStatus("Key event %c", keyChar);
+    }
 }
