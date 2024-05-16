@@ -10,9 +10,14 @@ class ValidadorEmail {
             cout << "Ingrese su correo electronico: " << endl;
             cin >> this->correo;
         }
-        
+
         bool validarCorreo(const string& correo){
-            // Codigo para validar
+            string const nombreRegex = "(^(?!.*[-._]{2})[a-zA-Z0-9._-]{1,15}(?![\\w.-]*[-._]{2})[a-zA-Z0-9])";
+            string const dominioRegex = "((?!.*\\.\\.)[a-zA-Z]{1,30}(?:\\.[a-zA-Z]{1,30})*)";
+            string const extensionRegex = "([a-zA-Z]{2,6}(?:\\.[a-zA-Z]{2,6})*)";
+            string const emailRegex = "^[a-zA-Z0-9][a-zA-Z0-9-_]{1,14}(?:\\.[a-zA-Z0-9-_]+)*@(?:[a-zA-Z](?:[a-zA-Z]{1,28}[a-zA-Z])?\\.)+[a-zA-Z](?:[a-zA-Z]*[a-zA-Z])?$";
+            std::regex regex(emailRegex);
+            return std::regex_match(correo, regex);
         }
 
 };
@@ -37,6 +42,7 @@ int main(){
         }
         else if (opcion == "2"){
             cout << "Saliendo del programa..." << endl;
+            break;
         }
         else {
             cout << "Opcion no permitida. " << endl;
