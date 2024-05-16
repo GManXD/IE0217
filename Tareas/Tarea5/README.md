@@ -1,3 +1,36 @@
+# Instrucciones de ejecución
+Para ejecutar el programa se debe ubicar en el directorio "Tareas\Tarea5\src\". Este tiene su propio makefile con sus reglas, las cuales son las siguientes:
+
+`build`:
+
+    Compila el código fuente y genera un ejecutable llamado "tarea5.x".
+
+`run`:    
+
+    Ejecuta el programa
+
+`all`:
+
+    Compila y corre el programa. Es decir, primero hace el target build y luego el target run.
+
+`clean`:
+
+    Limpia el directorio de archivos compilados y deja únicamente el código fuente.
+
+Para realizar alguna de estas acciones, se debe escribir en la terminal lo siguiente:
+
+```bash
+  mingw32-make accion
+```
+
+Donde la palabra "accion" se sustituye por la debida acción a realizar, por ejemplo, si deseamos compilar y correr el programa, podemos utilizar la accion all de la siguiente forma:
+
+```bash
+  mingw32-make all
+```
+
+
+
 # Parte Teórica 1/2
 
 **1. ¿Qué es una expresión regular y cuál es su propósito en programación?**
