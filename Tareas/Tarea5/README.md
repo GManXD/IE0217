@@ -83,30 +83,54 @@
 
 **1. ¿Qué suelen contener las variables CC, CFLAGS, CXXFLAGS y LDFLAGS en un makefile?**
 
+`CC`:
 
+    Esta variable suele especificar cual compilador utilizar
+
+`CFLAGS`:
+
+    Suele contener las opciones de compilación para código en C
+
+`CXXFLAGS`:
+
+    Suele contener las opciones de compilación para código en C++
+
+`LDFLAGS`:
+
+    Esta variable suele contener las opciones del linker 
 
 **2. ¿De qué se compone una regla en un Makefile?**
 
-
+    Una regla en un makefile se compone de: Un target que indica el resultado que se desea obtener, tambien debe contener las dependencias que indican cuales archivos necesita el target para ser generado. Por último, necesita un conjunto de comandos para generar el target
 
 **3. Defina qué es un target y cómo se relaciona con sus prerequisitos.**
 
-
+    Un target representa un archivo o una acción que el programa necesita producir, estos pueden ser ejecutables, acciones, bibliotecas o documentos. Los prerequisitos son los archivos que necesita el programa para que el target pueda ser producido. 
 
 **4. ¿Para qué se utiliza la bandera -I, -c y -o del compilador gec?**
 
+`-I`:
 
+    El -I indica un directorio donde el compilador debe buscar los archivos de cabecera.
+
+`-c`:
+
+    El -c se utiliza para compilar el archivo fuente pero no enlazarlo, es decir, se gener un archivo ".o"
+
+`-o`:
+
+    Se utiliza para especificar el nombre del archivo de salida
 
 **5. ¿Cómo se definen y se utilizan las variables en un Makefile? ¿Qué utilidad tienen?**
 
-
+    Las variable en un Makefile sirven para almacenar valore, de forma que hace más legible y entendible el Makefile, además que proporciona una mayor facilidad para modificar el mismo. Despues de definirlas, estas se pueden utilizar de la siguiente forma $(variable).
 
 **6. ¿Qué utilidad tiene un @ en un Makefile?**
 
-
+    El @ en un makefile sirve para que no se de la impresión por lineas de comando del comando que se está ejecutando, es decir, para que no se muestre en la salida estandar.
 
 **7. ¿Para qué se utiliza .PHONY en un Makefile?**
 
-
+    El .PHONY se utiliza para indicar que un target no se encuentra relacionado con un archivo real, es decir, que si yo ejecuto un make clean por ejemplo, y existe un archivo llamado clean, igual se ejecutará el make clean sin importar si existe un archivo llamado clean o no.
 
 **Nota: C++ utiliza el snake_case para nombrar constantes, mientras que para el resto se utiliza el CamelCase. Para los atributos de una clase se utiliza un prefijo que comúnmente es la inicial del nombre de la clase seguido de un guión bajo y el nombre del atributo en formato CamelCase**
