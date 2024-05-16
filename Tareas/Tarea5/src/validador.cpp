@@ -26,8 +26,8 @@ bool ValidadorEmail::validarCorreo(const std::string& correo) {
     // Verificar si el dominio no cumple con las reglas
     size_t posArroba = correo.find('@');
     std::string dominio = correo.substr(posArroba + 1);
-    if (dominio.length() > 30) {
-        throw std::invalid_argument("El dominio debe tener entre 1 y 30 caracteres. ");
+    if (dominio.length() > 30 || dominio.length() < 3) {
+        throw std::invalid_argument("El dominio debe tener entre 3 y 30 caracteres. ");
     }
 
     // Verificar si la extensión no cumple con las reglas
