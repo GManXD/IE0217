@@ -1,0 +1,77 @@
+\doxysection{Validador\+Email Class Reference}
+\hypertarget{class_validador_email}{}\label{class_validador_email}\index{ValidadorEmail@{ValidadorEmail}}
+
+
+Clase para validar correos electrónicos.  
+
+
+
+
+{\ttfamily \#include $<$validador.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_validador_email_a86f041e43e2a4e072e57d3ea3ff30450}{solicitar\+Correo}} ()
+\begin{DoxyCompactList}\small\item\em Solicita al usuario que ingrese un correo electrónico. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_validador_email_aca878ac0be680d764840cc18e241d0c1}{validar\+Correo}} (const std\+::string \&\mbox{\hyperlink{class_validador_email_a214e25583c4dd7dbbd70d7ff4c0e7292}{correo}})
+\begin{DoxyCompactList}\small\item\em Valida un correo electrónico según una serie de reglas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_validador_email_a214e25583c4dd7dbbd70d7ff4c0e7292}{correo}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase para validar correos electrónicos. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_validador_email_a86f041e43e2a4e072e57d3ea3ff30450}\label{class_validador_email_a86f041e43e2a4e072e57d3ea3ff30450} 
+\index{ValidadorEmail@{ValidadorEmail}!solicitarCorreo@{solicitarCorreo}}
+\index{solicitarCorreo@{solicitarCorreo}!ValidadorEmail@{ValidadorEmail}}
+\doxysubsubsection{\texorpdfstring{solicitarCorreo()}{solicitarCorreo()}}
+{\footnotesize\ttfamily void Validador\+Email\+::solicitar\+Correo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Solicita al usuario que ingrese un correo electrónico. 
+
+\Hypertarget{class_validador_email_aca878ac0be680d764840cc18e241d0c1}\label{class_validador_email_aca878ac0be680d764840cc18e241d0c1} 
+\index{ValidadorEmail@{ValidadorEmail}!validarCorreo@{validarCorreo}}
+\index{validarCorreo@{validarCorreo}!ValidadorEmail@{ValidadorEmail}}
+\doxysubsubsection{\texorpdfstring{validarCorreo()}{validarCorreo()}}
+{\footnotesize\ttfamily bool Validador\+Email\+::validar\+Correo (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{correo }\end{DoxyParamCaption})}
+
+
+
+Valida un correo electrónico según una serie de reglas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em correo} & El correo electrónico a validar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si el correo es válido, false en caso contrario. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & si el correo no cumple con las reglas de validación. \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_validador_email_a214e25583c4dd7dbbd70d7ff4c0e7292}\label{class_validador_email_a214e25583c4dd7dbbd70d7ff4c0e7292} 
+\index{ValidadorEmail@{ValidadorEmail}!correo@{correo}}
+\index{correo@{correo}!ValidadorEmail@{ValidadorEmail}}
+\doxysubsubsection{\texorpdfstring{correo}{correo}}
+{\footnotesize\ttfamily std\+::string Validador\+Email\+::correo}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{validador_8hpp}{validador.\+hpp}}\item 
+\mbox{\hyperlink{validador_8cpp}{validador.\+cpp}}\end{DoxyCompactItemize}
