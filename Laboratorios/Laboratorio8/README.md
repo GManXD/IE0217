@@ -1,7 +1,15 @@
 # Laboratorio 8
 
-Para esta sesión de laboratorio se forman equipos de trabajo para dividirse y realizar 16 ejercicios.  
+**Integrantes del equipo:**
+
+    Kryssia Martinez
+    Marcelo Valverde
+    Oscar Rojas Rojas
+    Jorge Meneses
+
 **Numero de Break-Up room: 03**
+
+Para esta sesión de laboratorio se forman equipos de trabajo para dividirse y realizar 16 ejercicios.  
 
     Los ejercicios de la base de datos de hospital.bd compienzan con el numero 1, seguido de un guion y el numero de ejercicio.
     Mientras que los ejercicios de la base de datos northway comienzan con el numero 2, seguido de un guin y el numero de ejercicio.
