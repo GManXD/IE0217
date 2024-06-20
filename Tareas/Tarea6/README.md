@@ -333,5 +333,75 @@ Figura 7. Resultados de la consulta 4).
 
 ## Actualizaciones
 
+    En esta sección se actualiza la tabla de datos, cambiando las primeras 3 optativas por un curso optativo de algún enfásis.
+Se seleccionan los siguientes cursos optativos: 
+
+``Fotónica``: ``IE0437``  
+``Microprocesadores``: ``IE0623``  
+``Ingeniería de radio``: ``IE0727``  
+
+Y se utiliza el siguiente código para realizar esta actualización:  
+
+```bash
+UPDATE plan_estudios.cursos
+SET Sigla = CASE 
+                WHEN CursoID = 4 THEN 'IE0437'
+                WHEN CursoID = 5 THEN 'IE0623'
+                WHEN CursoID = 8 THEN 'IE0727'
+            END,
+    Nombre = CASE 
+                WHEN CursoID = 4 THEN 'Fotónica'
+                WHEN CursoID = 5 THEN ' Microprocesadores'
+                WHEN CursoID = 8 THEN 'Ingeniería de radio'
+            END
+WHERE CursoID IN (4, 5, 8);
+
+```
+
+En la Figura 1 se muestra el antes de la tabla de datos, y a continuación se muestra el después:  
+
+![alt text](image-7.png)  
+
+Figura 8. Tabla cursos despues de cambiar las optativas  
+
+Como se observa en la Figura 8, ya no aparece el nombre Optativa-X, sino que aparece el curso correspondiente a dicha optativa, a excepción de la optativa IV que no fué cambiada.
 
 
+    Adicionalmente, se actualiza la descripción y dificultad de 3 cursos existentes a elección propia, los cursos a modificar son:
+
+``Fotónica``: ``IE0437``  
+``Microprocesadores``: ``IE0623``  
+``Ingeniería de radio``: ``IE0727``
+
+Es decir, las optativas recien añadidas.
+
+Y se utiliza el siguiente código para realizar la actualización:  
+
+```bash
+UPDATE plan_estudios.descripciones
+SET Descripcion = CASE 
+                WHEN CursoID = 4 THEN 'El curso abarca tanto los fundamentos teóricos como las aplicaciones prácticas en el campo de la fotónica'
+                WHEN CursoID = 5 THEN 'El curso combina teoría y práctica para desarrollar habilidades en el diseño y programación de sistemas con microprocesadores.'
+                WHEN CursoID = 8 THEN 'Estudio y aplicación de la tecnología de radiofrecuencia y sus sistemas.'
+            END,
+    Dificultad = CASE 
+                WHEN CursoID = 4 THEN 'Facil'
+                WHEN CursoID = 5 THEN 'Dificil'
+                WHEN CursoID = 8 THEN 'Dificil'
+            END
+WHERE CursoID IN (4, 5, 8);
+```
+
+En la Figura 3 se muestra el antes de la tabla de datos, y a continuación se muestra el después: 
+
+![alt text](image-8.png)
+
+Figura 9. Tabla descripciones despues de cambiar la descripción y dificultad de 3 cursos existentes.
+
+
+Como se evidencia en la Figura 9, la descripción y dificultad de los cursos optativos ahora ha cambiado.
+
+
+## Eliminaciones
+
+    En esta seccion se eliminará un curso inventado y 2 cursos del plan, de forma que también se eliminen sus descripciones asociadas.
