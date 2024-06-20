@@ -125,8 +125,8 @@ Y se utilizará el siguiente código para crear esta tabla:
 CREATE TABLE plan_estudios.cursos (
 	CursoID INT NOT NULL AUTO_INCREMENT,
 	Sigla VARCHAR(45),
-	Nombre VARCHAR(45) NOT NULL,
-	Semestre VARCHAR(45) NOT NULL,
+	Nombre VARCHAR(100) NOT NULL,
+	Semestre VARCHAR(45),
 	Creditos INT NOT NULL,
 	PRIMARY KEY (CursoID),
 	UNIQUE(Sigla),
@@ -170,9 +170,62 @@ Y se utilizará el siguiente código para crear esta tabla:
 CREATE TABLE plan_estudios.descripciones (
     DescripcionID INT NOT NULL AUTO_INCREMENT,
     CursoID INT NOT NULL,
-    Descripcion VARCHAR(1000),
+    Descripcion TEXT,
     Dificultad ENUM('Facil', 'Medio', 'Dificil') NOT NULL,
     PRIMARY KEY (DescripcionID),
     FOREIGN KEY (CursoID) REFERENCES plan_estudios.cursos(CursoID)
 );
 ```
+
+## **Insertar Datos**
+
+## _Insertar Datos para la Tabla cursos_
+
+La tabla cursos, que inicialmente se encuentra vacia, se le insertan datos con el siguiente código:
+```bash
+INSERT INTO plan_estudios.cursos (CursoID, Sigla, Nombre, Semestre, Creditos)
+VALUES 
+    (1, 'IE0579', 'Administración de sistemas', 'IX', 4),
+    (2, 'IE0613', 'Electrónica industrial', 'IX', 4),
+    (3, 'IE0599', 'Anteproyecto de TFG', 'IX', 4),
+    (4, 'IEAAA', 'Optativa I', 'IX', 3),
+    (5, 'IEAAB', 'Optativa II', 'IX', 3),
+    (6, 'IE0679', 'Ciencia de datos para la estimación y pronóstico de eventos', 'X', 3),
+    (7, 'IE0541', 'Seguridad ocupacional', 'X', 3),
+    (8, 'IEAAC', 'Optativa III', 'X', 3),
+    (9, 'IEAAD', 'Optativa IV', 'X', 3),
+    (10, 'IEAAF', 'Trabajo final de graduación', 'X', 0),
+    (11, 'IE0479', 'Ingeniería Económica', NULL, 3),
+    (12, 'IE0413', 'Electrónica II', NULL, 3),
+    (13, 'IE0315', 'Máquinas Eléctricas I', NULL, 4),
+    (14, 'IE0499', 'Proyecto Eléctrico', NULL, 3),
+    (15, 'IE0405', 'Modelos Probabilísticos de Señales y Sistemas', NULL, 3),
+    (16, 'IE0501', 'Responsabilidades en el Ejercicio Profesional de la Ingeniería Eléctrica', NULL, 1);
+```
+En la siguiente figura se muestra la tabla con los datos insertados, los valores NULL de la columna semestre se deben a que esos cursos no pertenecen a la licenciatura de ingeniería eléctrica, sino al bachillerato.  
+
+![alt text](image.png)
+
+
+## _Insertar Datos para la Tabla requisitos_
+
+La tabla requisitos, que inicialmente se encuentra vacia, se le insertan datos con el siguiente código:
+```bash
+INSERT INTO plan_estudios.requisitos (RequisitoID, CursoID, RequisitoCursoID)
+VALUES 
+    (1, 1, 11),
+    (2, 2, 12),
+    (3, 2, 13),
+    (4, 3, 14),
+    (5, 4, NULL),
+    (6, 5, NULL),
+    (7, 6, 15),
+    (8, 6, 1),
+    (9, 7, 16),
+    (10, 8, NULL),
+    (11, 9, NULL),
+    (12, 10, NULL);
+```
+En la siguiente figura se muestra la tabla con los datos insertados, los valores NULL de la columna RequisitoCursoID se deben a que esos cursos no poseen requisitos.
+
+![alt text](image-1.png)
