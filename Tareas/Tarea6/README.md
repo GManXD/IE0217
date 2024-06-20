@@ -208,7 +208,7 @@ VALUES
 Adicionalmente se le agregaron 2 cursos extra definidos por mi, los cuales corresponden a los CursosID 17 y 18, y estos presentan requisitos
 En la siguiente figura se muestra la tabla con los datos insertados, los valores NULL de la columna semestre se deben a que esos cursos no pertenecen a la licenciatura de ingeniería eléctrica, sino al bachillerato.  
 
-![alt text](image.png)
+![alt text](src/image.png)
 
 _Figura 1. Tabla cursos con los datos insertados_
 
@@ -235,7 +235,7 @@ VALUES
 ```
 En la siguiente figura se muestra la tabla con los datos insertados, los valores NULL de la columna RequisitoCursoID se deben a que esos cursos no poseen requisitos. Adicionalmente, los cursos con el CursoID 17 y 18 corresponden a los cursos inventados por mi, y en la tabla se muestran sus requisitos.
 
-![alt text](image-1.png)
+![alt text](src/image-1.png)
 
 _Figura 2. Tabla requisitos con los datos insertados_
 
@@ -270,7 +270,7 @@ VALUES
 En la siguiente figura se muestra la tabla con los datos insertados:  
 
 
-![alt text](image-2.png)
+![alt text](src/image-2.png)
 
 _Figura 3. Tabla descripciones con los datos insertados_
 
@@ -288,7 +288,7 @@ ON plan_estudios.cursos.CursoID = plan_estudios.descripciones.CursoID;
 
 En la siguiente Figura se muestra el resultado de la consulta:  
 
-![alt text](image-3.png)
+![alt text](src/image-3.png)
 
 _Figura 4. Resultados de la consulta 1)_
 
@@ -306,7 +306,7 @@ WHERE c1.CursoID = 6;
 
 En la siguiente Figura se muestra el resultado de la consulta:   
 
-![alt text](image-4.png)
+![alt text](src/image-4.png)
 
 _Figura 5. Resultados de la consulta 2)._
 
@@ -320,7 +320,7 @@ SELECT * FROM plan_estudios.cursos WHERE cursos.nombre NOT LIKE "Optativa%";
 
 En la siguiente Figura se muestra el resultado de la consulta:  
 
-![alt text](image-5.png)
+![alt text](src/image-5.png)
 
 _Figura 6. Resultados de la consulta 3)._
 
@@ -333,7 +333,7 @@ SELECT * FROM plan_estudios.cursos WHERE cursos.semestre = "X";
 
 En la siguiente Figura se muestra el resultado de la consulta:  
 
-![alt text](image-6.png)
+![alt text](src/image-6.png)
 
 _Figura 7. Resultados de la consulta 4)._
 
@@ -368,7 +368,7 @@ WHERE CursoID IN (4, 5, 8);
 
 En la Figura 1 se muestra el antes de la tabla de datos, y a continuación se muestra el después:  
 
-![alt text](image-7.png)  
+![alt text](src/image-7.png)  
 
 _Figura 8. Tabla cursos despues de cambiar las optativas_
 
@@ -402,7 +402,7 @@ WHERE CursoID IN (4, 5, 8);
 
 En la Figura 3 se muestra el antes de la tabla de datos, y a continuación se muestra el después: 
 
-![alt text](image-8.png)
+![alt text](src/image-8.png)
 
 _Figura 9. Tabla descripciones despues de cambiar la descripción y dificultad de 3 cursos existentes._
 
@@ -436,19 +436,19 @@ Se debe eliminar tambíen de la tabla requisitos pues esta tabla contiene como l
 
 En la Figura 8 se muestra el antes de la eliminación de datos de la tabla cursos, y a continuación se muestra el despúes:  
 
-![alt text](image-9.png)  
+![alt text](src/image-9.png)  
 
 _Figura 10. Tabla cursos despues de eliminar 3 cursos_
 
 En la Figura 2 se muestra el antes de la eliminación de datos de la tabla requisitos, y a continuación se muestra el despúes: 
 
-![alt text](image-10.png)
+![alt text](src/image-10.png)
 
 _Figura 11. Tabla requisitos despues de eliminar 3 cursos_
 
 En la Figura 9 se muestra el antes de la eliminación de datos de la tabla descripciones, y a continuación se muestra el despúes:  
 
-![alt text](image-11.png)  
+![alt text](src/image-11.png)  
 
 _Figura 12. Tabla descripciones despues de eliminar 3 cursos_
 
@@ -468,6 +468,6 @@ WHERE CursoID IN (1,2);
 
 En la Figura 11 se muestra el antes de la eliminación de datos de la tabla requisitos, y a continuación se muestra el despúes: 
 
-![alt text](image-12.png)  
+![alt text](src/image-12.png)  
 
 _Figura 13. Tabla requisitos despues de eliminar los requisitos específicos de 2 cursos existentes_
