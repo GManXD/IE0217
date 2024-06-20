@@ -229,3 +229,34 @@ VALUES
 En la siguiente figura se muestra la tabla con los datos insertados, los valores NULL de la columna RequisitoCursoID se deben a que esos cursos no poseen requisitos.
 
 ![alt text](image-1.png)
+
+## _Insertar Datos para la Tabla descripciones_
+
+La tabla descripciones, que inicialmente se encuentra vacia, se le insertan datos con el siguiente código:
+```bash
+INSERT INTO plan_estudios.descripciones (DescripcionID, CursoID, Descripcion, Dificultad)
+VALUES 
+    (1, 1, 'En este curso, se considerará la organización o empresa como la unidad de estudio, sobre la cual se desarrollará el análisis de factores internos y externos tales como geopolítica, evolución tecnológica, globalización de mercados, cambios económicos, transformaciones del mercado, papel del estado, y otros, aspectos que gravitan en el adecuado accionar de estos sistemas.',
+    'Facil'),
+    (2, 2, 'El curso permite introducir los principios y fundamentos de la electrónica de
+	potencia.', 'Dificil'),
+    (3, 3, 'El curso de Anteproyecto de Tesis es un curso orientado a desarrollar en el estudiante las habilidades necesarias para elaborar su propuesta de investigación.', 'Medio'),
+    (4, 4, 'Curso optativo', 'Medio'),
+    (5, 5, 'Curso optativo', 'Medio'),
+    (6, 6, 'Integra la formación profesional del estudiante de Ingeniería Eléctrica mediante la aplicación de conceptos estudiados en cursos anteriores, junto con nuevas herramientas que permitan apoyar de manera sistémica el proceso de análisis de eventos',
+    'Facil'),
+    (7, 7, ' Enseña la importancia de la salud y seguridad en el trabajo, identificando y previniendo riesgos laborales', 'Dificil'),
+    (8, 8, 'Curso optativo', 'Medio'),
+    (9, 9, 'Curso optativo', 'Medio'),
+    (10, 10, 'Trabajo final de graduación', 'Dificil'),
+    (11, 11, 'A lo largo del curso, los estudiantes aprenderán a evaluar económicamente proyectos de ingeniería, comparar alternativas de inversión y optimizar recursos dentro del contexto de proyectos eléctricos y tecnológicos.', 'Facil'),
+    (12, 12, 'Éste es un curso de electrónica analógica muy basado en el análisis y diseño de circuitos con amplificadores operacionales.', 'Dificil'),
+    (13, 13, 'Se hace énfasis en el análisis en régimen permanente, de los transformadores eléctricos de potencia, y las máquinas de inducción trifásicas.', 'Medio'),
+    (14, 14, 'Curso integrador y abierto en su temática, y de aplicación de estrategias de diseño, investigación y solución a un problema en el campo de la ingeniería eléctrica y ramas afines.', 'Dificil'),
+    (15, 15, 'Comprensión profunda de los conceptos y técnicas probabilísticas aplicadas al análisis y diseño de sistemas y señales', 'Dificil'),
+    (16, 16, ' Curso teórico por medio del cual el estudiante se prepara para conocer sobre los diversos aspectos de la responsabilidad en el ejercicio profesional', 'Facil');
+```
+
+En la siguiente figura se muestra la tabla con los datos insertados:  
+
+![alt text](image-2.png)
