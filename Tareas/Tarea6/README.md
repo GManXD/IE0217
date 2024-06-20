@@ -297,4 +297,32 @@ En la siguiente Figura se muestra el resultado de la consulta:
 
 ![alt text](image-4.png)
 
-Figura 5. Resultados de la consulta 2)
+Figura 5. Resultados de la consulta 2).
+
+
+``Consulta 3)`` Consiste en realizar una consulta para listar los cursos que no son optativos, y se utiliza el siguiente código:
+```bash
+SELECT * FROM plan_estudios.cursos WHERE cursos.nombre NOT LIKE "Optativa%";
+```
+
+En la siguiente Figura se muestra el resultado de la consulta:  
+
+![alt text](image-5.png)
+
+Figura 6. Resultados de la consulta 3).
+
+``Consulta 4)`` Consiste en realizar una consulta para listar los cursos que son del semestre "X", y se utiliza el siguiente código:
+```bash
+SELECT * FROM plan_estudios.cursos WHERE cursos.semestre = "X";
+```
+
+En la siguiente Figura se muestra el resultado de la consulta:  
+
+![alt text](image-6.png)
+
+Figura 7. Resultados de la consulta 4).
+
+
+## Actualizaciones
+
+
