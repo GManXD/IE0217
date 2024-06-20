@@ -97,7 +97,7 @@
 
 # Parte Práctica:
 
-## Creación de la Base de datos
+## **Creación de la Base de datos**
 
 Se utiliza el siguiente comando para crear la base de datos "plan_estudios"
 
@@ -114,7 +114,7 @@ Y ahora esta debe aparecer en los esquemas creados
 
 La Tabla cursos tendrá como columnas lo siguiente: 
 
-``CursoID`` Clave primaria
+``CursoID`` Clave primaria  
 ``Sigla`` Clave candidata  
 ``Nombre`` Clave candidata  
 ``Semestre``  
@@ -210,7 +210,7 @@ En la siguiente figura se muestra la tabla con los datos insertados, los valores
 
 ![alt text](image.png)
 
-Figura 1. Tabla cursos con los datos insertados
+_Figura 1. Tabla cursos con los datos insertados_
 
 ### _Insertar Datos para la Tabla requisitos_
 
@@ -237,7 +237,7 @@ En la siguiente figura se muestra la tabla con los datos insertados, los valores
 
 ![alt text](image-1.png)
 
-Figura 2. Tabla requisitos con los datos insertados
+_Figura 2. Tabla requisitos con los datos insertados_
 
 ### _Insertar Datos para la Tabla descripciones_
 
@@ -272,12 +272,13 @@ En la siguiente figura se muestra la tabla con los datos insertados:
 
 ![alt text](image-2.png)
 
-Figura 3. Tabla descripciones con los datos insertados
+_Figura 3. Tabla descripciones con los datos insertados_
 
-## Consultas
+## **Consultas**
 
 
-``Consulta 1)`` Para realizar la consulta que consiste en listar todos los cursos con su sigla, nombre, semestre, créditos, descripción y dificultad, se utiliza el siguiente código:  
+### **``Consulta 1)``**  
+    Para realizar la consulta que consiste en listar todos los cursos con su sigla, nombre, semestre, créditos, descripción y dificultad, se utiliza el siguiente código:  
 ```bash
 SELECT cursos.Sigla, cursos.Nombre, cursos.Semestre, cursos.Creditos, descripciones.Descripcion, descripciones.Dificultad
 FROM plan_estudios.cursos
@@ -289,10 +290,12 @@ En la siguiente Figura se muestra el resultado de la consulta:
 
 ![alt text](image-3.png)
 
-Figura 4. Resultados de la consulta 1)
+_Figura 4. Resultados de la consulta 1)_
 
 
-``Consulta 2)`` Consiste en listar todos los requisitos de un curso específico, en este caso se elige el curso "Ciencia de datos para la estimación y pronóstico de eventos" cuyas siglas corresponden a "IE-0679", además su CursoID es 6, y se utiliza el siguiente código:  
+### **``Consulta 2)``**  
+    Consiste en listar todos los requisitos de un curso específico, en este caso se elige el curso "Ciencia de datos para la estimación y pronóstico de eventos" cuyas siglas corresponden a "IE-0679", además su CursoID es 6, y se utiliza el siguiente código: 
+
 ```bash
 SELECT c2.Nombre as Requisito
 FROM plan_estudios.requisitos r
@@ -305,10 +308,12 @@ En la siguiente Figura se muestra el resultado de la consulta:
 
 ![alt text](image-4.png)
 
-Figura 5. Resultados de la consulta 2).
+_Figura 5. Resultados de la consulta 2)._
 
 
-``Consulta 3)`` Consiste en realizar una consulta para listar los cursos que no son optativos, y se utiliza el siguiente código:
+### ``Consulta 3)``  
+    Consiste en realizar una consulta para listar los cursos que no son optativos, y se utiliza el siguiente código:
+
 ```bash
 SELECT * FROM plan_estudios.cursos WHERE cursos.nombre NOT LIKE "Optativa%";
 ```
@@ -317,9 +322,11 @@ En la siguiente Figura se muestra el resultado de la consulta:
 
 ![alt text](image-5.png)
 
-Figura 6. Resultados de la consulta 3).
+_Figura 6. Resultados de la consulta 3)._
 
-``Consulta 4)`` Consiste en realizar una consulta para listar los cursos que son del semestre "X", y se utiliza el siguiente código:
+### ``Consulta 4)``  
+    Consiste en realizar una consulta para listar los cursos que son del semestre "X", y se utiliza el siguiente código:
+    
 ```bash
 SELECT * FROM plan_estudios.cursos WHERE cursos.semestre = "X";
 ```
@@ -328,11 +335,12 @@ En la siguiente Figura se muestra el resultado de la consulta:
 
 ![alt text](image-6.png)
 
-Figura 7. Resultados de la consulta 4).
+_Figura 7. Resultados de la consulta 4)._
 
 
-## Actualizaciones
+## **Actualizaciones**  
 
+### ``Actualización 1)`` 
     En esta sección se actualiza la tabla de datos, cambiando las primeras 3 optativas por un curso optativo de algún enfásis.
 Se seleccionan los siguientes cursos optativos: 
 
@@ -362,12 +370,12 @@ En la Figura 1 se muestra el antes de la tabla de datos, y a continuación se mu
 
 ![alt text](image-7.png)  
 
-Figura 8. Tabla cursos despues de cambiar las optativas  
+_Figura 8. Tabla cursos despues de cambiar las optativas_
 
 Como se observa en la Figura 8, ya no aparece el nombre Optativa-X, sino que aparece el curso correspondiente a dicha optativa, a excepción de la optativa IV que no fué cambiada.
 
-
-    Adicionalmente, se actualiza la descripción y dificultad de 3 cursos existentes a elección propia, los cursos a modificar son:
+### ``Actualización 2)`` 
+    Además, se debe actualizar la descripción y dificultad de 3 cursos existentes a elección propia, los cursos a modificar son:
 
 ``Fotónica``: ``IE0437``  
 ``Microprocesadores``: ``IE0623``  
@@ -396,14 +404,14 @@ En la Figura 3 se muestra el antes de la tabla de datos, y a continuación se mu
 
 ![alt text](image-8.png)
 
-Figura 9. Tabla descripciones despues de cambiar la descripción y dificultad de 3 cursos existentes.
+_Figura 9. Tabla descripciones despues de cambiar la descripción y dificultad de 3 cursos existentes._
 
 
 Como se evidencia en la Figura 9, la descripción y dificultad de los cursos optativos ahora ha cambiado.
 
 
-## Eliminaciones
-
+## **Eliminaciones**  
+### ``Eliminación 1)`` 
     En esta seccion se eliminará un curso inventado y 2 cursos del plan, de forma que también se eliminen sus descripciones asociadas.
 
 Se eligen los siguientes cursos para ser eliminados:
@@ -430,22 +438,23 @@ En la Figura 8 se muestra el antes de la eliminación de datos de la tabla curso
 
 ![alt text](image-9.png)  
 
-Figura 10. Tabla cursos despues de eliminar 3 cursos
+_Figura 10. Tabla cursos despues de eliminar 3 cursos_
 
 En la Figura 2 se muestra el antes de la eliminación de datos de la tabla requisitos, y a continuación se muestra el despúes: 
 
 ![alt text](image-10.png)
 
-Figura 11. Tabla requisitos despues de eliminar 3 cursos
+_Figura 11. Tabla requisitos despues de eliminar 3 cursos_
 
 En la Figura 9 se muestra el antes de la eliminación de datos de la tabla descripciones, y a continuación se muestra el despúes:  
 
 ![alt text](image-11.png)  
 
-Figura 12. Tabla descripciones despues de eliminar 3 cursos
+_Figura 12. Tabla descripciones despues de eliminar 3 cursos_
 
 
-    Adicionalmente, se debe eliminar los requisitos específicos de 2 cursos existentes. Los cursos elegidos son los siguientes
+### ``Eliminación 2)`` 
+    Adicionalmente, se debe eliminar los requisitos específicos de 2 cursos existentes. Los cursos elegidos son los siguientes:
 
 ``Administración de sistemas``: ``IE0579``,  CursoID = 1  
 ``Electronica Industrial``: ``IE0613``, CursoID = 2  
@@ -461,4 +470,4 @@ En la Figura 11 se muestra el antes de la eliminación de datos de la tabla requ
 
 ![alt text](image-12.png)  
 
-Figura 13. Tabla requisitos despues de eliminar los requisitos específicos de 2 cursos existentes
+_Figura 13. Tabla requisitos despues de eliminar los requisitos específicos de 2 cursos existentes_
