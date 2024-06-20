@@ -200,8 +200,12 @@ VALUES
     (13, 'IE0315', 'Máquinas Eléctricas I', NULL, 4),
     (14, 'IE0499', 'Proyecto Eléctrico', NULL, 3),
     (15, 'IE0405', 'Modelos Probabilísticos de Señales y Sistemas', NULL, 3),
-    (16, 'IE0501', 'Responsabilidades en el Ejercicio Profesional de la Ingeniería Eléctrica', NULL, 1);
+    (16, 'IE0501', 'Responsabilidades en el Ejercicio Profesional de la Ingeniería Eléctrica', NULL, 1)
+    (17, 'IE998', 'Electrónica III', 'IX', 3),
+    (18, 'IE999', 'Electrónica IV', 'X', 3);
 ```
+
+Adicionalmente se le agregaron 2 cursos extra definidos por mi, los cuales corresponden a los CursosID 17 y 18, y estos presentan requisitos
 En la siguiente figura se muestra la tabla con los datos insertados, los valores NULL de la columna semestre se deben a que esos cursos no pertenecen a la licenciatura de ingeniería eléctrica, sino al bachillerato.  
 
 ![alt text](image.png)
@@ -225,9 +229,11 @@ VALUES
     (9, 7, 16),
     (10, 8, NULL),
     (11, 9, NULL),
-    (12, 10, NULL);
+    (12, 10, NULL),
+    (13, 17, 12),
+    (14, 18, 17);
 ```
-En la siguiente figura se muestra la tabla con los datos insertados, los valores NULL de la columna RequisitoCursoID se deben a que esos cursos no poseen requisitos.
+En la siguiente figura se muestra la tabla con los datos insertados, los valores NULL de la columna RequisitoCursoID se deben a que esos cursos no poseen requisitos. Adicionalmente, los cursos con el CursoID 17 y 18 corresponden a los cursos inventados por mi, y en la tabla se muestran sus requisitos.
 
 ![alt text](image-1.png)
 
@@ -257,10 +263,12 @@ VALUES
     (13, 13, 'Se hace énfasis en el análisis en régimen permanente, de los transformadores eléctricos de potencia, y las máquinas de inducción trifásicas.', 'Medio'),
     (14, 14, 'Curso integrador y abierto en su temática, y de aplicación de estrategias de diseño, investigación y solución a un problema en el campo de la ingeniería eléctrica y ramas afines.', 'Dificil'),
     (15, 15, 'Comprensión profunda de los conceptos y técnicas probabilísticas aplicadas al análisis y diseño de sistemas y señales', 'Dificil'),
-    (16, 16, ' Curso teórico por medio del cual el estudiante se prepara para conocer sobre los diversos aspectos de la responsabilidad en el ejercicio profesional', 'Facil');
+    (16, 16, ' Curso teórico por medio del cual el estudiante se prepara para conocer sobre los diversos aspectos de la responsabilidad en el ejercicio profesional', 'Facil'),
+    (17, 17, 'Curso inventado por mi', 'Medio'),
+    (18, 18, 'Curso inventado por mi', 'Dificil');
 ```
-
 En la siguiente figura se muestra la tabla con los datos insertados:  
+
 
 ![alt text](image-2.png)
 
@@ -324,5 +332,6 @@ Figura 7. Resultados de la consulta 4).
 
 
 ## Actualizaciones
+
 
 
