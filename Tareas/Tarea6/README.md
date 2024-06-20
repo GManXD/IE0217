@@ -122,18 +122,36 @@ La Tabla cursos tendrá como columnas lo siguiente:
 
 Y se utilizará el siguiente código para crear esta tabla:
 ```bash
-CREATE TABLE `plan_estudios`.`cursos` (
+CREATE TABLE plan_estudios.cursos (
 	CursoID INT NOT NULL AUTO_INCREMENT,
 	Sigla VARCHAR(45) NOT NULL,
 	Nombre VARCHAR(45) NOT NULL,
 	Semestre VARCHAR(45) NOT NULL,
 	Creditos INT NOT NULL,
 	PRIMARY KEY (CursoID),
-	UNIQUE(CursoID),
 	UNIQUE(Sigla),
-	UNIQUE(Nombre)
+	UNIQUE(Nombre),
+    CHECK(creditos>=0)
 );
 ```
 
 
+### _Creación de la Tabla Requisitos_
 
+La Tabla Requisitos tendrá como columnas lo siguiente: 
+
+``RequisitoID`` Clave primaria  
+``CursoID`` Clave Foranea, referencia a tabla cursos  
+``RequisitoCursoID`` Clave Foranea, referencia a tabla cursos  
+
+Y se utilizará el siguiente código para crear esta tabla:
+```bash
+CREATE TABLE plan_estudios.requisitos (
+	RequisitoID INT NOT NULL AUTO_INCREMENT,
+	CursoID INT NOT NULL,
+	RequisitoCursoID INT NOT NULL,
+	PRIMARY KEY (RequisitoID),
+	FOREIGN KEY(CursoID) REFERENCES plan_estudios.cursos(CursoID),
+    FOREIGN KEY(RequisitoCursoID) REFERENCES plan_estudios.cursos(CursoID)
+);
+```
