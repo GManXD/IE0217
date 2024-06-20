@@ -405,3 +405,60 @@ Como se evidencia en la Figura 9, la descripción y dificultad de los cursos opt
 ## Eliminaciones
 
     En esta seccion se eliminará un curso inventado y 2 cursos del plan, de forma que también se eliminen sus descripciones asociadas.
+
+Se eligen los siguientes cursos para ser eliminados:
+
+``Electronica IV``: ``IE999``, CursoID = 18  
+``Seguridad ocupacional``: ``IE0541``,  CursoID = 7  
+``Anteproyecto de TFG de radio``: ``IE0599``, CursoID = 3  
+
+El código a utilizar para realizar esta eliminación es el siguiente:
+```bash
+DELETE FROM plan_estudios.descripciones
+WHERE CursoID IN (3, 7, 18);
+
+DELETE FROM plan_estudios.requisitos
+WHERE CursoID IN (3, 7, 18);
+
+DELETE FROM plan_estudios.cursos
+WHERE CursoID IN (3, 7, 18);
+```
+
+Se debe eliminar tambíen de la tabla requisitos pues esta tabla contiene como llave foranea a CursoID que pertenece a la tabla cursos, por lo que se debe eliminar en la tabla requisitos las filas que correspondan a los CursosID que se deseen eliminar.
+
+En la Figura 8 se muestra el antes de la eliminación de datos de la tabla cursos, y a continuación se muestra el despúes:  
+
+![alt text](image-9.png)  
+
+Figura 10. Tabla cursos despues de eliminar 3 cursos
+
+En la Figura 2 se muestra el antes de la eliminación de datos de la tabla requisitos, y a continuación se muestra el despúes: 
+
+![alt text](image-10.png)
+
+Figura 11. Tabla requisitos despues de eliminar 3 cursos
+
+En la Figura 9 se muestra el antes de la eliminación de datos de la tabla descripciones, y a continuación se muestra el despúes:  
+
+![alt text](image-11.png)  
+
+Figura 12. Tabla descripciones despues de eliminar 3 cursos
+
+
+    Adicionalmente, se debe eliminar los requisitos específicos de 2 cursos existentes. Los cursos elegidos son los siguientes
+
+``Administración de sistemas``: ``IE0579``,  CursoID = 1  
+``Electronica Industrial``: ``IE0613``, CursoID = 2  
+
+Se utilizará el siguiente código para realizar la eliminación:
+
+```bash
+DELETE FROM plan_estudios.requisitos
+WHERE CursoID IN (1,2);
+```
+
+En la Figura 11 se muestra el antes de la eliminación de datos de la tabla requisitos, y a continuación se muestra el despúes: 
+
+![alt text](image-12.png)  
+
+Figura 13. Tabla requisitos despues de eliminar los requisitos específicos de 2 cursos existentes
