@@ -92,3 +92,48 @@
 
     Se implementa mediante una tabla intermedia (tabla de unión) que contiene claves foráneas que referencian las claves primarias de las dos tablas relacionadas.
     Como consideración, asegurarse de que la tabla intermedia tenga claves foráneas y, opcionalmente, una clave primaria compuesta de las dos claves foráneas. Y considerar el impacto en el rendimiento y la complejidad de las operaciones de inserción y eliminación masivas.
+
+
+
+# Parte Práctica:
+
+## Creación de la Base de datos
+
+Se utiliza el siguiente comando para crear la base de datos "plan_estudios"
+
+```bash
+CREATE DATABASE plan_estudios;
+```
+
+Y ahora esta debe aparecer en los esquemas creados
+
+
+## **Creación de las Tablas**
+
+### _Creación de la Tabla Cursos_
+
+La Tabla cursos tendrá como columnas lo siguiente: 
+
+``CursoID`` Clave primaria
+``Sigla`` Clave candidata  
+``Nombre`` Clave candidata  
+``Semestre``  
+``Creditos``  
+
+Y se utilizará el siguiente código para crear esta tabla:
+```bash
+CREATE TABLE `plan_estudios`.`cursos` (
+	CursoID INT NOT NULL AUTO_INCREMENT,
+	Sigla VARCHAR(45) NOT NULL,
+	Nombre VARCHAR(45) NOT NULL,
+	Semestre VARCHAR(45) NOT NULL,
+	Creditos INT NOT NULL,
+	PRIMARY KEY (CursoID),
+	UNIQUE(CursoID),
+	UNIQUE(Sigla),
+	UNIQUE(Nombre)
+);
+```
+
+
+
