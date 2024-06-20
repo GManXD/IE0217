@@ -179,7 +179,7 @@ CREATE TABLE plan_estudios.descripciones (
 
 ## **Insertar Datos**
 
-## _Insertar Datos para la Tabla cursos_
+### _Insertar Datos para la Tabla cursos_
 
 La tabla cursos, que inicialmente se encuentra vacia, se le insertan datos con el siguiente código:
 ```bash
@@ -206,8 +206,9 @@ En la siguiente figura se muestra la tabla con los datos insertados, los valores
 
 ![alt text](image.png)
 
+Figura 1. Tabla cursos con los datos insertados
 
-## _Insertar Datos para la Tabla requisitos_
+### _Insertar Datos para la Tabla requisitos_
 
 La tabla requisitos, que inicialmente se encuentra vacia, se le insertan datos con el siguiente código:
 ```bash
@@ -230,7 +231,9 @@ En la siguiente figura se muestra la tabla con los datos insertados, los valores
 
 ![alt text](image-1.png)
 
-## _Insertar Datos para la Tabla descripciones_
+Figura 2. Tabla requisitos con los datos insertados
+
+### _Insertar Datos para la Tabla descripciones_
 
 La tabla descripciones, que inicialmente se encuentra vacia, se le insertan datos con el siguiente código:
 ```bash
@@ -260,3 +263,38 @@ VALUES
 En la siguiente figura se muestra la tabla con los datos insertados:  
 
 ![alt text](image-2.png)
+
+Figura 3. Tabla descripciones con los datos insertados
+
+## Consultas
+
+
+``Consulta 1)`` Para realizar la consulta que consiste en listar todos los cursos con su sigla, nombre, semestre, créditos, descripción y dificultad, se utiliza el siguiente código:  
+```bash
+SELECT cursos.Sigla, cursos.Nombre, cursos.Semestre, cursos.Creditos, descripciones.Descripcion, descripciones.Dificultad
+FROM plan_estudios.cursos
+INNER JOIN plan_estudios.descripciones
+ON plan_estudios.cursos.CursoID = plan_estudios.descripciones.CursoID;
+```
+
+En la siguiente Figura se muestra el resultado de la consulta:  
+
+![alt text](image-3.png)
+
+Figura 4. Resultados de la consulta 1)
+
+
+``Consulta 2)`` Consiste en listar todos los requisitos de un curso específico, en este caso se elige el curso "Ciencia de datos para la estimación y pronóstico de eventos" cuyas siglas corresponden a "IE-0679", además su CursoID es 6, y se utiliza el siguiente código:  
+```bash
+SELECT c2.Nombre as Requisito
+FROM plan_estudios.requisitos r
+INNER JOIN plan_estudios.cursos c1 ON r.CursoID = c1.CursoID
+INNER JOIN plan_estudios.cursos c2 ON r.RequisitoCursoID = c2.CursoID
+WHERE c1.CursoID = 6;
+```
+
+En la siguiente Figura se muestra el resultado de la consulta:   
+
+![alt text](image-4.png)
+
+Figura 5. Resultados de la consulta 2)
