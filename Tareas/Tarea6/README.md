@@ -124,7 +124,7 @@ Y se utilizará el siguiente código para crear esta tabla:
 ```bash
 CREATE TABLE plan_estudios.cursos (
 	CursoID INT NOT NULL AUTO_INCREMENT,
-	Sigla VARCHAR(45) NOT NULL,
+	Sigla VARCHAR(45),
 	Nombre VARCHAR(45) NOT NULL,
 	Semestre VARCHAR(45) NOT NULL,
 	Creditos INT NOT NULL,
@@ -149,9 +149,30 @@ Y se utilizará el siguiente código para crear esta tabla:
 CREATE TABLE plan_estudios.requisitos (
 	RequisitoID INT NOT NULL AUTO_INCREMENT,
 	CursoID INT NOT NULL,
-	RequisitoCursoID INT NOT NULL,
+	RequisitoCursoID INT,
 	PRIMARY KEY (RequisitoID),
 	FOREIGN KEY(CursoID) REFERENCES plan_estudios.cursos(CursoID),
     FOREIGN KEY(RequisitoCursoID) REFERENCES plan_estudios.cursos(CursoID)
+);
+```
+
+### _Creación de la Tabla Descripciones_
+
+La Tabla Descripciones tendrá como columnas lo siguiente: 
+
+``DescripcionID`` Clave primaria  
+``CursoID`` Clave Foranea, referencia a tabla cursos  
+``Descripcion``
+``Dificultad`` (Facil, Medio, Dificil) 
+
+Y se utilizará el siguiente código para crear esta tabla:
+```bash
+CREATE TABLE plan_estudios.descripciones (
+    DescripcionID INT NOT NULL AUTO_INCREMENT,
+    CursoID INT NOT NULL,
+    Descripcion VARCHAR(1000),
+    Dificultad ENUM('Facil', 'Medio', 'Dificil') NOT NULL,
+    PRIMARY KEY (DescripcionID),
+    FOREIGN KEY (CursoID) REFERENCES plan_estudios.cursos(CursoID)
 );
 ```
